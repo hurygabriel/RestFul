@@ -6,13 +6,20 @@ CREATE DATABASE sumula
 GO
 USE sumula
 
+CREATE TABLE estadio(
+nome varchar(50),
+primary key(nome)
+)
 
 CREATE TABLE clube(
 id int not null identity,
 datafundacao date not null,
 nome VARCHAR(50),
 fundador VARCHAR(100),
+estadio varchar(50),
+FOREIGN KEY (estadio) REFERENCES estadio(nome)
 )
+
 
 CREATE TABLE titulo(
 id int not null identity,
@@ -32,7 +39,7 @@ FOREIGN KEY (idtitulo) REFERENCES titulo(id),
 CREATE TABLE jogador(
 id int not null identity,
 datanasc date not null,
-posicao VARCHAR(100) not null,
+--posicao VARCHAR(100) not null,
 peso float,
 altura float,
 naturalidade VARCHAR(50),
@@ -52,7 +59,10 @@ FOREIGN KEY(idJogador) REFERENCES jogador(id)
 CREATE TABLE escalacao(
 idEscalacao int not null,
 idJogador int not null,
-idSituacao int not null,
+posto varchar(10),
+posicao varchar(20),
+PRIMARY KEY(idEscalacao),
+FOREIGN KEY(idJogador) REFERENCES jogador(id)
 
 )
 
@@ -67,8 +77,13 @@ FOREIGN KEY (idjogador) REFERENCES jogador(id)
 )
 
 CREATE TABLE campeonato(
+idCampeonato int not null,
 nome VARCHAR(50),
-ano date
+ano date,
+PRIMARY KEY(idCampeonato)
+)
+
+CREATE TABLE participacao(
 )
 
 CREATE TABLE inscricao(
@@ -77,6 +92,33 @@ BID int not null,
 datapublicacao date
 )
 
+
+
+
+CREATE TABLE sumula(
+idSumula int not null,
+idGol int not null,
+idSubstituicao int not null
+)
+
+CREATE TABLE gol(
+idSumula int
+idJogador int not null
+)
+
+CREATE TABLE substituicao(
+)
+
+CREATE TABLE cartao(
+)
+
+CREATE TABLE partida(
+idEscalacao int not null,
+idClube int not null,
+idCampeonato int,
+nomeEstadio varchar(50),
+
+)
 
 
 insert into jogador values ('Hury','camisa10'),('Pato','fominha'),('Ronaldo','topete')
