@@ -56,7 +56,6 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setAltura(rs.getFloat("altura"));
 			j.setNaturalidade(rs.getString("naturalidade"));
 			
-			System.out.println(j.toString());
 			lista.add(j);
 			
 			
