@@ -7,18 +7,28 @@ GO
 USE sumula
 
 CREATE TABLE estadio(
-nome varchar(50),
+nome varchar(50) not null,
+uf varchar(2) not null,
+capacidade int not null,
+dataInauguracao varchar(10),
+endereco varchar(90),
 primary key(nome)
 )
 
+INSERT INTO	estadio values ('Itaquerao','sp',49205,'10/05/2014','Av. Miguel Ignácio Curi, 111 - Arthur Alvim, São Paulo - SP'),
+('Morumbi','sp',79039,'02/10/1960','Praça Roberto Gomes Pedrosa, 1 - Morumbi, São Paulo - SP')
+
 CREATE TABLE clube(
 id int not null identity,
-datafundacao date not null,
-nome VARCHAR(50),
-fundador VARCHAR(100),
+datafundacao varchar(10) not null,
+nome VARCHAR(50) not null,
+--fundador VARCHAR(100),
 estadio varchar(50),
 FOREIGN KEY (estadio) REFERENCES estadio(nome)
 )
+
+INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao'),
+('02/02/2002','são paulo','Morumbi')
 
 
 CREATE TABLE titulo(
@@ -40,7 +50,7 @@ CREATE TABLE jogador(
 id int not null identity,
 nome varchar(50),
 apelido varchar(50),
-datanasc date not null,
+datanasc varchar(10) not null, --date
 peso float,
 altura float,
 naturalidade VARCHAR(50),
@@ -49,9 +59,6 @@ PRIMARY KEY(id)
 
 INSERT INTO jogador VALUES ('ronaldo','ronaldinho','14/06/1994','70.5','1.80','Brasileiro'),
 ('joao','pele','01/01/1950','80.7','1.75','Brasileiro')
-
-select * from jogador
-delete from jogador
 
 CREATE TABLE situacao(
 idSituacao int not null,

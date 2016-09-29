@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import connection.ConnectionImpl;
 import connection.GenericConnection;
 import model.Jogador;
@@ -36,7 +39,7 @@ public class JogadorDaoImpl implements JogadorDao {
 
 		PreparedStatement ps = c.prepareStatement(query);
 		ResultSet rs = ps.executeQuery();
-
+		
 
 		while (rs.next()) {
 			
@@ -44,10 +47,10 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNome(rs.getString("nome"));
 			j.setApelido(rs.getString("apelido"));
 			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			String data = sdf.format(rs.getDate("datanasc"));
-			System.out.println(data);
-			j.setDatanasc(new Date (data));
+			//SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			//String data = sdf.format(rs.getDate("datanasc"));
+			//System.out.println(data);
+			j.setDatanasc(rs.getString("datanasc"));
 			
 			j.setPeso(rs.getFloat("peso"));
 			j.setAltura(rs.getFloat("altura"));

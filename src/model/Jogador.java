@@ -9,7 +9,7 @@ public class Jogador {
 
 	private String nome;
 	private String apelido;
-	private Date datanasc;
+	private String datanasc;
 	private float peso;
 	private float altura;
 	private String naturalidade;
@@ -26,10 +26,10 @@ public class Jogador {
 	public void setApelido(String apelido) {
 		this.apelido = apelido;
 	}
-	public Date getDatanasc() {
+	public String getDatanasc() {
 		return datanasc;
 	}
-	public void setDatanasc(Date datanasc) {
+	public void setDatanasc(String datanasc) {
 		this.datanasc = datanasc;
 	}
 	public float getPeso() {
