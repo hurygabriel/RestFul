@@ -47,6 +47,8 @@ naturalidade VARCHAR(50),
 PRIMARY KEY(id)
 )
 
+INSERT INTO jogador VALUES ('ronaldo','ronaldinho','14/06/1994','70.5','1.80','Brasileiro')
+
 
 CREATE TABLE situacao(
 idSituacao int not null,

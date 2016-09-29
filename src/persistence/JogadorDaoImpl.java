@@ -44,9 +44,7 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNome(rs.getString("nome"));
 			j.setApelido(rs.getString("apelido"));
 			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Date data = new Date(sdf.parse(rs.getString("datanasc")).getTime());
-			j.setDatanasc(data);
+			j.setDatanasc(rs.getDate("datanasc"));//TODO formatar
 			
 			j.setPeso(rs.getFloat("peso"));
 			j.setAltura(rs.getFloat("altura"));
