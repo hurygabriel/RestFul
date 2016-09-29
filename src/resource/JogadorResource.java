@@ -1,6 +1,7 @@
 package resource;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -16,8 +17,10 @@ public class JogadorResource {
 	@GET
 	@Path("/listarTodos")
 	@Produces("application/json")
-	public List<Jogador> listarTodos() throws SQLException {
+	public List<Jogador> listarTodos() throws SQLException, ParseException {
 		return new JogadorCtrl().listaTodos();
 
 	}
+	
+	
 }

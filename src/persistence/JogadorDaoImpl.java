@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import connection.ConnectionImpl;
@@ -27,7 +30,7 @@ public class JogadorDaoImpl implements JogadorDao {
 	}
 
 	@Override
-	public List<Jogador> pesquisa() throws SQLException {
+	public List<Jogador> pesquisa() throws SQLException, ParseException {
 		List<Jogador> lista = new ArrayList<Jogador>();
 		String query = "SELECT * FROM jogador"; 
 
@@ -36,10 +39,19 @@ public class JogadorDaoImpl implements JogadorDao {
 
 
 		while (rs.next()) {
+			
 			Jogador j = new Jogador();
 			j.setNome(rs.getString("nome"));
 			j.setApelido(rs.getString("apelido"));
-
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date data = new Date(sdf.parse(rs.getString("datanasc")).getTime());
+			j.setDatanasc(data);
+			
+			j.setPeso(rs.getFloat("peso"));
+			j.setAltura(rs.getFloat("altura"));
+			j.setNaturalidade(rs.getString("naturalidade"));
+			
 			lista.add(j);
 		}
 		ps.close();

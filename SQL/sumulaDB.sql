@@ -38,8 +38,9 @@ FOREIGN KEY (idtitulo) REFERENCES titulo(id),
 
 CREATE TABLE jogador(
 id int not null identity,
+nome varchar(50),
+apelido varchar(50),
 datanasc date not null,
---posicao VARCHAR(100) not null,
 peso float,
 altura float,
 naturalidade VARCHAR(50),
