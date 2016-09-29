@@ -16,4 +16,7 @@ public class EstadioCtrl {
 		return edao.pesquisa();
 	}
 	
+	public Estadio pesquisaUnico(String nome) throws SQLException{
+		return edao.pesquisaUnico(nome);
+	}
 }
