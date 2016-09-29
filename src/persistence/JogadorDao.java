@@ -1,16 +1,11 @@
 package persistence;
 
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.Jogador;
 
-public interface JogadorDao {
+public interface JogadorDao extends GenericDao<Jogador> {
 
-	public List<Jogador> pesquisa() throws SQLException, ParseException ;
-
-	
+	Jogador pesquisaUnico(String obj) throws SQLException;
 	
 }

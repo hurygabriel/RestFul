@@ -11,7 +11,7 @@ import connection.ConnectionImpl;
 import connection.GenericConnection;
 import model.Estadio;
 
-public class EstadioDaoImpl {
+public class EstadioDaoImpl implements EstadioDao {
 	private Connection c;
 	
 	public EstadioDaoImpl(){
@@ -20,6 +20,7 @@ public class EstadioDaoImpl {
 	}
 	
 	//pesquisa todos
+	@Override
 	public List<Estadio> pesquisa() throws SQLException{
 		List<Estadio> lista = new ArrayList<Estadio>();
 		String query = "SELECT * FROM estadio";
@@ -41,5 +42,47 @@ public class EstadioDaoImpl {
 		ps.close();
 		return lista;
 	}
+	
+	@Override
+	public Estadio pesquisaUnico(String nome) throws SQLException{
+		Estadio e = new Estadio();
+		String query = "SELECT * FROM estadio WHERE nome LIKE ?";
+		
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setString(1, nome);
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			e.setNome(rs.getString("nome"));
+			e.setCapacidade(rs.getInt("capacidade"));
+			e.setDataInauguracao(rs.getString("dataInauguracao"));
+			e.setEndereco(rs.getString("endereco"));
+			e.setUf(rs.getString("uf"));
+		}
+		
+		ps.close();
+		return e;
+		
+	}
+
+	@Override
+	public void inclui(Estadio obj) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void altera(Estadio obj) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exclui(Estadio obj) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

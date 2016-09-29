@@ -25,15 +25,9 @@ public class JogadorDaoImpl implements JogadorDao {
 		c = gc.getConnection();
 	}
 	
-	
-	//@Override
-	public void inclui(Jogador obj) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
-	public List<Jogador> pesquisa() throws SQLException, ParseException {
+	public List<Jogador> pesquisa() throws SQLException {
 		List<Jogador> lista = new ArrayList<Jogador>();
 		String query = "SELECT * FROM jogador"; 
 
@@ -65,16 +59,36 @@ public class JogadorDaoImpl implements JogadorDao {
 		return lista;
 	}
 
-	//@Override
+	@Override
 	public void altera(Jogador obj) throws SQLException {
 		// TODO Auto-generated method stub
 
 	}
 
-	//@Override
+	@Override
 	public void exclui(Jogador obj) throws SQLException {
 		// TODO Auto-generated method stub
 
 	}
+	
+	@Override
+	public void inclui(Jogador obj) throws SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+
+	@Override
+	public Jogador pesquisaUnico(String obj) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+
+
 
 }
