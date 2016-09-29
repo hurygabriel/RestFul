@@ -44,16 +44,22 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNome(rs.getString("nome"));
 			j.setApelido(rs.getString("apelido"));
 			
-			j.setDatanasc(rs.getDate("datanasc"));//TODO formatar
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			String data = sdf.format(rs.getDate("datanasc"));
+			System.out.println(data);
+			j.setDatanasc(new Date (data));
 			
 			j.setPeso(rs.getFloat("peso"));
 			j.setAltura(rs.getFloat("altura"));
 			j.setNaturalidade(rs.getString("naturalidade"));
 			
+			System.out.println(j.toString());
 			lista.add(j);
+			
+			
 		}
 		ps.close();
-
+		
 		return lista;
 	}
 
