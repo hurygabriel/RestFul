@@ -24,6 +24,7 @@ datafundacao varchar(10) not null,
 nome VARCHAR(50) not null,
 --fundador VARCHAR(100),
 estadio varchar(50),
+PRIMARY KEY (id),
 FOREIGN KEY (estadio) REFERENCES estadio(nome)
 )
 
@@ -82,12 +83,19 @@ FOREIGN KEY(idJogador) REFERENCES jogador(id)
 CREATE TABLE contrato(
 numero int not null,
 tipo VARCHAR(30),
-datainicio date not null,
-datafim date,
+datainicio varchar(10) not null,
+datafim varchar(10),
+idclube int not null,
+idjogador int not null,
 PRIMARY KEY(numero),
 FOREIGN KEY (idclube) REFERENCES clube(id),
 FOREIGN KEY (idjogador) REFERENCES jogador(id)
 )
+
+INSERT INTO contrato VALUES (111,'Emprestimo','01/01/2015','01/01/2017',1,1),
+(222,'CLT','02/02/2015','02/02/2017',2,2)
+
+
 
 CREATE TABLE campeonato(
 idCampeonato int not null,
@@ -104,9 +112,6 @@ numero int not null,
 BID int not null,
 datapublicacao date
 )
-
-
-
 
 CREATE TABLE sumula(
 idSumula int not null,
@@ -133,5 +138,25 @@ nomeEstadio varchar(50),
 
 )
 
+-------------------------
+Pesquisa Contrato e traz clube e jogador
+--------------------------
+create view v_livrocategoria
+as
 
-insert into jogador values ('Hury','camisa10'),('Pato','fominha'),('Ronaldo','topete')
+select cont.numero, cont.tipo, cont.datainicio, cont.datafim,
+ jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade,
+ cb.nome as clube, cb.datafundacao, 
+ esta.nome as estadio, esta.capacidade, esta.
+from contrato cont
+inner join jogador jog
+on cont.idjogador = jog.id
+inner join clube cb
+on cont.idclube = cb.id
+inner join estadio esta
+on cb.estadio = esta.nome
+group by cont.numero, cont.tipo, cont.datainicio, cont.datafim, jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade, cb.nome
+
+--
+drop view v_livrocategoria
+select * from v_livrocategoria
