@@ -58,8 +58,10 @@ naturalidade VARCHAR(50),
 PRIMARY KEY(id)
 )
 
-INSERT INTO jogador VALUES ('ronaldo','ronaldinho','14/06/1994','70.5','1.80','Brasileiro'),
-('joao','pele','01/01/1950','80.7','1.75','Brasileiro')
+INSERT INTO jogador VALUES ('Ronaldo','Ronaldinho','14/06/1994','70.5','1.80','Brasileiro'),
+('Joao','Pele','01/01/1950','80.7','1.75','Brasileiro'),
+('Hury','Iuri','01/01/1994','70','1.80','Brasileiro'),
+('Pedro','ZUZI','01/01/1993','75','1.90','Brasileiro')
 
 CREATE TABLE situacao(
 idSituacao int not null,
@@ -93,7 +95,9 @@ FOREIGN KEY (idjogador) REFERENCES jogador(id)
 )
 
 INSERT INTO contrato VALUES (111,'DEFINITIVO','01/01/2015','01/01/2017',1,1),
-(222,'RENOVACAO','02/02/2015','02/02/2017',2,2)
+(222,'RENOVACAO','02/02/2015','02/02/2017',2,2),
+(333,'EMPRESTIMO','01/01/2015','01/01/2017',1,3),
+(444,'RESCISAO','01/01/2015','01/01/2017',2,4)
 
 
 CREATE TABLE campeonato(
@@ -143,15 +147,17 @@ Pesquisa todos os jogadores de um clube
 CREATE VIEW v_jogadorClube
 as
 
-SELECT cb.nome as clube,
-jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade
+SELECT cb.nome as clube, cb.id as idclube,
+jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade, jog.id, jog.datanasc
 from clube cb
 inner join contrato cont
 on cont.idclube = cb.id
 inner join jogador jog
 on jog.id = cont.idjogador
-group by cb.nome, jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade
-
+group by cb.nome, cb.id, jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade, jog.id, jog.datanasc
+-------------------------
+drop view v_jogadorClube
+select * from v_jogadorClube where idclube = 1
 -------------------------
 Pesquisa Contrato e traz clube e jogador
 --------------------------
@@ -174,6 +180,6 @@ group by cont.numero, cont.tipo, cont.datainicio, cont.datafim,
   cb.nome, cb.datafundacao,
    esta.nome
 
---
+--------------------------
 drop view v_livrocategoria
 SELECT * from v_livrocategoria

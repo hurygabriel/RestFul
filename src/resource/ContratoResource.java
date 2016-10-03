@@ -18,4 +18,7 @@ public class ContratoResource {
 	public List<Contrato>listarTodos() throws SQLException{
 		return new ContratoCtrl().listaTodos();
 	}
+	
+	
+	
 }

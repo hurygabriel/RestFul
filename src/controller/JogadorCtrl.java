@@ -15,10 +15,11 @@ public class JogadorCtrl {
 	JogadorDao jdao = new JogadorDaoImpl();
 	
 	public List<Jogador> listaTodos() throws SQLException, ParseException{
-		
 		return jdao.pesquisa();
 	}
 
-	
+	public List<Jogador> listarPorClube(int id)throws SQLException{
+		return jdao.pesquisaPorClube(id);
+	}
 	
 }

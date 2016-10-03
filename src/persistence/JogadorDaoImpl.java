@@ -96,4 +96,32 @@ public class JogadorDaoImpl implements JogadorDao {
 		return j;
 	}
 
+	@Override
+	public List<Jogador> pesquisaPorClube(int id) throws SQLException {
+		List<Jogador> lista = new ArrayList<Jogador>();
+		String query = "SELECT * FROM v_jogadorClube WHERE idclube = ?";
+
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			Jogador j = new Jogador();
+			j.setId(rs.getInt("id"));
+			j.setNome(rs.getString("nome"));
+			j.setApelido(rs.getString("apelido"));
+			j.setDatanasc(rs.getString("datanasc"));
+			j.setPeso(rs.getFloat("peso"));
+			j.setAltura(rs.getFloat("altura"));
+			j.setNaturalidade(rs.getString("naturalidade"));
+
+			lista.add(j);
+
+		}
+		ps.close();
+
+		return lista;
+	}
+
 }
