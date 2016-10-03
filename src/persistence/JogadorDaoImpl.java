@@ -38,6 +38,7 @@ public class JogadorDaoImpl implements JogadorDao {
 		while (rs.next()) {
 			
 			Jogador j = new Jogador();
+			j.setId(rs.getInt("id"));
 			j.setNome(rs.getString("nome"));
 			j.setApelido(rs.getString("apelido"));
 			

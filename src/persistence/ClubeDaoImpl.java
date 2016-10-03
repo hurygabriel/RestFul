@@ -39,6 +39,7 @@ public class ClubeDaoImpl implements ClubeDao{
 			Clube c = new Clube();
 			//pesquisa o estadio, traz todos seus atributos
 			c.setEstadio(edao.pesquisaUnico(rs.getString("estadio")));
+			c.setId(rs.getInt("id"));
 			c.setNome(rs.getString("nome"));
 			c.setDataFundacao(rs.getString("dataFundacao"));
 			
