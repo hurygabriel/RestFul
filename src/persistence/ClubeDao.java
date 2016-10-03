@@ -6,6 +6,6 @@ import model.Clube;
 
 public interface ClubeDao extends GenericDao<Clube> {
 	
-	ClubeDao pesquisaUnico (String obj)throws SQLException;
+	Clube pesquisaUnico (int obj)throws SQLException;
 
 }

@@ -63,9 +63,24 @@ public class ClubeDaoImpl implements ClubeDao{
 	}
 
 	@Override
-	public ClubeDao pesquisaUnico(String obj) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public Clube pesquisaUnico(int obj) throws SQLException {
+		Clube cb = new Clube();
+		String query = "SELECT * FROM clube WHERE id = ?";
+		
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setInt(1, obj);
+		ResultSet rs = ps.executeQuery();
+		
+		EstadioDao edao = new EstadioDaoImpl();
+		if (rs.next()) {
+			cb.setEstadio(edao.pesquisaUnico(rs.getString("estadio")));
+			cb.setId(rs.getInt("id"));
+			cb.setNome(rs.getString("nome"));
+			cb.setDataFundacao(rs.getString("dataFundacao"));
+		}
+		
+		ps.close();
+		return cb;
 	}
 
 }

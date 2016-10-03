@@ -30,7 +30,7 @@ FOREIGN KEY (estadio) REFERENCES estadio(nome)
 
 INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao'),
 ('02/02/2002','são paulo','Morumbi')
-SELECT*from clube
+
 
 CREATE TABLE titulo(
 id int not null identity,
@@ -92,9 +92,8 @@ FOREIGN KEY (idclube) REFERENCES clube(id),
 FOREIGN KEY (idjogador) REFERENCES jogador(id)
 )
 
-INSERT INTO contrato VALUES (111,'Emprestimo','01/01/2015','01/01/2017',1,1),
-(222,'CLT','02/02/2015','02/02/2017',2,2)
-
+INSERT INTO contrato VALUES (111,'DEFINITIVO','01/01/2015','01/01/2017',1,1),
+(222,'RENOVACAO','02/02/2015','02/02/2017',2,2)
 
 
 CREATE TABLE campeonato(

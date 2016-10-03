@@ -28,7 +28,7 @@ public class ContratoDaoImpl implements ContratoDao {
 	@Override
 	public List<Contrato> pesquisa() throws SQLException {
 		List<Contrato> lista = new ArrayList<Contrato>();
-		String query = "SELECT * FROM estadio";
+		String query = "SELECT * FROM contrato";
 
 		PreparedStatement ps = c.prepareStatement(query);
 		ResultSet rs = ps.executeQuery();
@@ -43,8 +43,8 @@ public class ContratoDaoImpl implements ContratoDao {
 			cont.setDatainicio(rs.getString("datainicio"));
 			cont.setDatafim(rs.getString("datafim"));
 			cont.setTipo(TipoContrato.valueOf(rs.getString("tipo")));
-			// cont.setClube(cdao.pesquisaUnico(rs.getInt("idclube")));
-			// cont.setJogador(jdao.pesquisaUnico(rs.getInt("idjogador")));
+			cont.setClube(cdao.pesquisaUnico(rs.getInt("idclube")));
+			cont.setJogador(jdao.pesquisaUnico(rs.getInt("idjogador")));
 
 			lista.add(cont);
 		}

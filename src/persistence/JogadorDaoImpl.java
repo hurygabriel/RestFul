@@ -19,44 +19,40 @@ import model.Jogador;
 
 public class JogadorDaoImpl implements JogadorDao {
 	private Connection c;
-	
+
 	public JogadorDaoImpl() {
 		GenericConnection gc = new ConnectionImpl();
 		c = gc.getConnection();
 	}
-	
 
 	@Override
 	public List<Jogador> pesquisa() throws SQLException {
 		List<Jogador> lista = new ArrayList<Jogador>();
-		String query = "SELECT * FROM jogador"; 
+		String query = "SELECT * FROM jogador";
 
 		PreparedStatement ps = c.prepareStatement(query);
 		ResultSet rs = ps.executeQuery();
-		
 
 		while (rs.next()) {
-			
+
 			Jogador j = new Jogador();
 			j.setId(rs.getInt("id"));
 			j.setNome(rs.getString("nome"));
 			j.setApelido(rs.getString("apelido"));
-			
-			//SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			//String data = sdf.format(rs.getDate("datanasc"));
-			//System.out.println(data);
+
+			// SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			// String data = sdf.format(rs.getDate("datanasc"));
+			// System.out.println(data);
 			j.setDatanasc(rs.getString("datanasc"));
-			
 			j.setPeso(rs.getFloat("peso"));
 			j.setAltura(rs.getFloat("altura"));
 			j.setNaturalidade(rs.getString("naturalidade"));
-			
+
 			lista.add(j);
-			
-			
+
 		}
 		ps.close();
-		
+
 		return lista;
 	}
 
@@ -71,25 +67,33 @@ public class JogadorDaoImpl implements JogadorDao {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	@Override
 	public void inclui(Jogador obj) throws SQLException {
 		// TODO Auto-generated method stub
 
 	}
 
-
 	@Override
-	public Jogador pesquisaUnico(String obj) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public Jogador pesquisaUnico(int obj) throws SQLException {
+		Jogador j = new Jogador();
+		String query = "SELECT * FROM jogador WHERE id = ?";
+
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setInt(1, obj);
+		ResultSet rs = ps.executeQuery();
+
+		if (rs.next()) {
+			j.setId(rs.getInt("id"));
+			j.setNome(rs.getString("nome"));
+			j.setApelido(rs.getString("apelido"));
+			j.setDatanasc(rs.getString("datanasc"));
+			j.setPeso(rs.getFloat("peso"));
+			j.setAltura(rs.getFloat("altura"));
+			j.setNaturalidade(rs.getString("naturalidade"));
+		}
+		ps.close();
+		return j;
 	}
-
-
-
-
-
-
-
 
 }

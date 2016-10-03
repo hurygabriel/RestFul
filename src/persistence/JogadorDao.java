@@ -6,6 +6,6 @@ import model.Jogador;
 
 public interface JogadorDao extends GenericDao<Jogador> {
 
-	Jogador pesquisaUnico(String obj) throws SQLException;
+	Jogador pesquisaUnico(int obj) throws SQLException;
 	
 }
