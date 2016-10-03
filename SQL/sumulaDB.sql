@@ -12,7 +12,7 @@ uf varchar(2) not null,
 capacidade int not null,
 dataInauguracao varchar(10),
 endereco varchar(90),
-primary key(nome)
+PRIMARY KEY(nome)
 )
 
 INSERT INTO	estadio values ('Itaquerao','sp',49205,'10/05/2014','Av. Miguel Ignácio Curi, 111 - Arthur Alvim, São Paulo - SP'),
@@ -30,7 +30,7 @@ FOREIGN KEY (estadio) REFERENCES estadio(nome)
 
 INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao'),
 ('02/02/2002','são paulo','Morumbi')
-
+SELECT*from clube
 
 CREATE TABLE titulo(
 id int not null identity,
@@ -139,15 +139,30 @@ nomeEstadio varchar(50),
 )
 
 -------------------------
-Pesquisa Contrato e traz clube e jogador
---------------------------
-create view v_livrocategoria
+Pesquisa todos os jogadores de um clube
+-------------------------
+CREATE VIEW v_jogadorClube
 as
 
-select cont.numero, cont.tipo, cont.datainicio, cont.datafim,
+SELECT cb.nome as clube,
+jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade
+from clube cb
+inner join contrato cont
+on cont.idclube = cb.id
+inner join jogador jog
+on jog.id = cont.idjogador
+group by cb.nome, jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade
+
+-------------------------
+Pesquisa Contrato e traz clube e jogador
+--------------------------
+create view v_ContJogClube
+as
+
+SELECT cont.numero, cont.tipo, cont.datainicio, cont.datafim,
  jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade,
- cb.nome as clube, cb.datafundacao, 
- esta.nome as estadio, esta.capacidade, esta.
+  cb.nome as clube, cb.datafundacao, 
+   esta.nome as estadio
 from contrato cont
 inner join jogador jog
 on cont.idjogador = jog.id
@@ -155,8 +170,11 @@ inner join clube cb
 on cont.idclube = cb.id
 inner join estadio esta
 on cb.estadio = esta.nome
-group by cont.numero, cont.tipo, cont.datainicio, cont.datafim, jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade, cb.nome
+group by cont.numero, cont.tipo, cont.datainicio, cont.datafim,
+ jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade,
+  cb.nome, cb.datafundacao,
+   esta.nome
 
 --
 drop view v_livrocategoria
-select * from v_livrocategoria
+SELECT * from v_livrocategoria

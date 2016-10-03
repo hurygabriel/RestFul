@@ -11,6 +11,11 @@ import connection.ConnectionImpl;
 import connection.GenericConnection;
 import model.Estadio;
 
+/**
+ * 
+ * @author hury
+ *
+ */
 public class EstadioDaoImpl implements EstadioDao {
 	private Connection c;
 	
