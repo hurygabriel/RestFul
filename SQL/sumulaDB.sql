@@ -32,21 +32,6 @@ INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao'),
 ('02/02/2002','são paulo','Morumbi')
 
 
-CREATE TABLE titulo(
-id int not null identity,
-nome VARCHAR(50),
-PRIMARY KEY(id)
-)
-
-CREATE TABLE clubetitulos(
-idtitulo int not null,
-idclube int not null,
-data date not null,
-FOREIGN KEY (idclube) REFERENCES clube(id),
-FOREIGN KEY (idtitulo) REFERENCES titulo(id),
-)
-
-
 CREATE TABLE jogador(
 id int not null identity,
 nome varchar(50),
@@ -64,23 +49,21 @@ INSERT INTO jogador VALUES ('Ronaldo','Ronaldinho','14/06/1994','70.5','1.80','B
 ('Pedro','ZUZI','01/01/1993','75','1.90','Brasileiro')
 
 CREATE TABLE situacao(
-idSituacao int not null,
-idJogador int not null,
-situacao VARCHAR(20),
-primary key(idSituacao),
-FOREIGN KEY(idJogador) REFERENCES jogador(id)
-
+nome VARCHAR(30),
+primary key(nome)
 )
 
-CREATE TABLE escalacao(
-idEscalacao int not null,
-idJogador int not null,
-posto varchar(10),
-posicao varchar(20),
-PRIMARY KEY(idEscalacao),
-FOREIGN KEY(idJogador) REFERENCES jogador(id)
+INSERT INTO situacao VALUES ('DISPONIVEL'), ('OK'), ('MACHUCADO'), ('SERVINDOSELECAO'), ('SUSPENSO'), ('PUNICAO'), ('NAOINSCRITO'), ('INDISPONIVEL')
 
+CREATE TABLE situacaojogador(
+data varchar(10),
+idjogador int not null,
+situacao varchar(30) not null,
+FOREIGN KEY (idjogador) references jogador(id),
+FOREIGN KEY (situacao) references situacao(nome)
 )
+
+INSERT INTO	situacaojogador VALUES ('01/01/2015', 1, 'MACHUCADO'),('01/01/2015', 2, 'SUSPENSO'),('01/01/2015', 3, 'PUNICAO'),('01/01/2015', 4, 'OK')
 
 CREATE TABLE contrato(
 numero int not null,
@@ -99,6 +82,31 @@ INSERT INTO contrato VALUES (111,'DEFINITIVO','01/01/2015','01/01/2017',1,1),
 (333,'EMPRESTIMO','01/01/2015','01/01/2017',1,3),
 (444,'RESCISAO','01/01/2015','01/01/2017',2,4)
 
+------------até aqui ok
+
+CREATE TABLE escalacao(
+idEscalacao int not null,
+idJogador int not null,
+posto varchar(10),
+posicao varchar(20),
+PRIMARY KEY(idEscalacao),
+FOREIGN KEY(idJogador) REFERENCES jogador(id)
+
+)
+
+CREATE TABLE titulo(
+id int not null identity,
+nome VARCHAR(50),
+PRIMARY KEY(id)
+)
+
+CREATE TABLE clubetitulos(
+idtitulo int not null,
+idclube int not null,
+data date not null,
+FOREIGN KEY (idclube) REFERENCES clube(id),
+FOREIGN KEY (idtitulo) REFERENCES titulo(id),
+)
 
 CREATE TABLE campeonato(
 idCampeonato int not null,

@@ -58,7 +58,7 @@ public class ConnectionImpl implements GenericConnection {
 				con.close();
 			con = null;
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
+			System.out.println("Erro: "+e.getMessage());
 		}
 	}
 }
