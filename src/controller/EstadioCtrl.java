@@ -7,7 +7,11 @@ import model.Estadio;
 import persistence.EstadioDao;
 import persistence.EstadioDaoImpl;
 
-
+/**
+ * Classe responsável pelo controle do estaadio, junto a sua percistencia.
+ * @author hury
+ *
+ */
 public class EstadioCtrl {
 
 	EstadioDao edao = new EstadioDaoImpl();

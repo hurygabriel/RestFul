@@ -5,11 +5,18 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * annotation responsável por validar o campo tipo contrato,
+ * em tempo de execução
+ * @author hury
+ *
+ */
+
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface TipoContratoValidador {
 	
-	
+	//thread
 
 }	
 	

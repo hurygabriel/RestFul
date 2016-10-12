@@ -40,13 +40,15 @@ datanasc varchar(10) not null, --date
 peso float,
 altura float,
 naturalidade VARCHAR(50),
+uf varchar(2),
+posicao varchar(30),
 PRIMARY KEY(id)
 )
 
-INSERT INTO jogador VALUES ('Ronaldo','Ronaldinho','14/06/1994','70.5','1.80','Brasileiro'),
-('Joao','Pele','01/01/1950','80.7','1.75','Brasileiro'),
-('Hury','Iuri','01/01/1994','70','1.80','Brasileiro'),
-('Pedro','ZUZI','01/01/1993','75','1.90','Brasileiro')
+INSERT INTO jogador VALUES ('Ronaldo','Ronaldinho','14/06/1994','70.5','1.80','Brasileiro','SP','ATACANTE'),
+('Joao','Pele','01/01/1950','80.7','1.75','Brasileiro','RJ','ATACANTE'),
+('Hury','Iuri','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO'),
+('Pedro','ZUZI','01/01/1993','75','1.90','Brasileiro','RJ','GOLEIRO')
 
 CREATE TABLE situacao(
 nome VARCHAR(30),

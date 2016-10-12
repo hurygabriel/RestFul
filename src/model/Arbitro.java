@@ -7,6 +7,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import enumeration.SituacaoJuiz;
 import enumeration.UF;
 
+/**
+ * 
+ * @author Thiago
+ *
+ */
+
 @XmlRootElement
 public class Arbitro {
 

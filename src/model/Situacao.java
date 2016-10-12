@@ -1,9 +1,9 @@
 package model;
 
-import enumeration.SituacaoJogador;
+//import enumeration.SituacaoJogador;
 
 public class Situacao {
 	
-	private SituacaoJogador nome;
+	//private SituacaoJogador nome;
 
 }

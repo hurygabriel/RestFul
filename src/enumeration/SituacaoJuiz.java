@@ -1,5 +1,10 @@
 package enumeration;
 
+/**
+ * Constante da situação de um juiz
+ * @author Thiago
+ *
+ */
 public enum SituacaoJuiz {
 
 	DISPONIVEL("Disponivel"), 

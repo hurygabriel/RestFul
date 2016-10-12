@@ -1,5 +1,9 @@
 package enumeration;
-
+/**
+ * Classe responsável por manter as constantes de estados brasileiros.
+ * @author Thiago
+ *
+ */
 public enum UF {
 
 	AC("Acre"), AL("Alagoas"), AP("Amapá"), AM("Amazonas"), BA("Bahia"), 

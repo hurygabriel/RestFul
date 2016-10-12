@@ -1,11 +1,13 @@
 package model;
 
-import java.util.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import enumeration.PosicaoJogador;
+import enumeration.UF;
+
 /**
- * 
+ * Classe que possui os atributos de jogador
  * @author hury
  *
  */
@@ -20,7 +22,8 @@ public class Jogador {
 	private float peso;
 	private float altura;
 	private String naturalidade;
-	
+	private UF uf;
+	private PosicaoJogador posicao;
 	
 	public int getId() {
 		return id;
@@ -64,20 +67,27 @@ public class Jogador {
 	public void setNaturalidade(String naturalidade) {
 		this.naturalidade = naturalidade;
 	}
+	public UF getUf() {
+		return uf;
+	}
+	public void setUf(UF uf) {
+		this.uf = uf;
+	}
+	public PosicaoJogador getPosicao() {
+		return posicao;
+	}
+	public void setPosicao(PosicaoJogador posicao) {
+		this.posicao = posicao;
+	}
 	
 	@Override
 	public String toString() {
 		return "Jogador [id=" + id + ", nome=" + nome + ", apelido=" + apelido + ", datanasc=" + datanasc + ", peso="
-				+ peso + ", altura=" + altura + ", naturalidade=" + naturalidade + "]";
+				+ peso + ", altura=" + altura + ", naturalidade=" + naturalidade + ", uf=" + uf + ", posicao=" + posicao
+				+ "]";
 	}
-
-	
 	
 
-
-	
-	
-	
 	
 	
 }

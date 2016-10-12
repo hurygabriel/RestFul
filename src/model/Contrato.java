@@ -4,6 +4,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import enumeration.TipoContrato;
 
+/**
+ * 
+ * @author hury
+ *
+ */
+
 @XmlRootElement
 public class Contrato {
 	

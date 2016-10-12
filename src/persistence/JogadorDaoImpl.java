@@ -4,17 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import connection.ConnectionImpl;
 import connection.GenericConnection;
+import enumeration.PosicaoJogador;
+import enumeration.UF;
 import model.Jogador;
 
 public class JogadorDaoImpl implements JogadorDao {
@@ -47,7 +42,9 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setPeso(rs.getFloat("peso"));
 			j.setAltura(rs.getFloat("altura"));
 			j.setNaturalidade(rs.getString("naturalidade"));
-
+			j.setUf(UF.valueOf(rs.getString("uf")));
+			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
+			
 			lista.add(j);
 
 		}
@@ -91,6 +88,9 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setPeso(rs.getFloat("peso"));
 			j.setAltura(rs.getFloat("altura"));
 			j.setNaturalidade(rs.getString("naturalidade"));
+			j.setUf(UF.valueOf(rs.getString("uf")));
+			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
+			
 		}
 		ps.close();
 		return j;
@@ -115,7 +115,101 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setPeso(rs.getFloat("peso"));
 			j.setAltura(rs.getFloat("altura"));
 			j.setNaturalidade(rs.getString("naturalidade"));
+			j.setUf(UF.valueOf(rs.getString("uf")));
+			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
+			
+			lista.add(j);
 
+		}
+		ps.close();
+
+		return lista;
+	}
+
+	@Override
+	public List<Jogador> pesquisaPorNome(String nome) throws SQLException {
+		List<Jogador> lista = new ArrayList<Jogador>();
+		String query = "SELECT * FROM jogador WHERE nome LIKE %?%";
+
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setString(1, nome);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			Jogador j = new Jogador();
+			j.setId(rs.getInt("id"));
+			j.setNome(rs.getString("nome"));
+			j.setApelido(rs.getString("apelido"));
+			j.setDatanasc(rs.getString("datanasc"));
+			j.setPeso(rs.getFloat("peso"));
+			j.setAltura(rs.getFloat("altura"));
+			j.setNaturalidade(rs.getString("naturalidade"));
+			j.setUf(UF.valueOf(rs.getString("uf")));
+			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
+			
+			lista.add(j);
+
+		}
+		ps.close();
+
+		return lista;
+
+	}
+
+	@Override
+	public List<Jogador> pesquisaPorUF(String uf) throws SQLException {
+		List<Jogador> lista = new ArrayList<Jogador>();
+		String query = "SELECT * FROM jogador WHERE uf LIKE ?";
+
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setString(1, uf);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			Jogador j = new Jogador();
+			j.setId(rs.getInt("id"));
+			j.setNome(rs.getString("nome"));
+			j.setApelido(rs.getString("apelido"));
+			j.setDatanasc(rs.getString("datanasc"));
+			j.setPeso(rs.getFloat("peso"));
+			j.setAltura(rs.getFloat("altura"));
+			j.setNaturalidade(rs.getString("naturalidade"));
+			j.setUf(UF.valueOf(rs.getString("uf")));
+			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
+			
+			lista.add(j);
+
+		}
+		ps.close();
+
+		return lista;
+		
+	}
+
+	@Override
+	public List<Jogador> pesquisaPorPosicao(String posicao) throws SQLException {
+		List<Jogador> lista = new ArrayList<Jogador>();
+		String query = "SELECT * FROM jogador WHERE posicao LIKE ?";
+
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setString(1, posicao);
+		ResultSet rs = ps.executeQuery();
+		
+		while (rs.next()) {
+
+			Jogador j = new Jogador();
+			j.setId(rs.getInt("id"));
+			j.setNome(rs.getString("nome"));
+			j.setApelido(rs.getString("apelido"));
+			j.setDatanasc(rs.getString("datanasc"));
+			j.setPeso(rs.getFloat("peso"));
+			j.setAltura(rs.getFloat("altura"));
+			j.setNaturalidade(rs.getString("naturalidade"));
+			j.setUf(UF.valueOf(rs.getString("uf")));
+			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
+			
 			lista.add(j);
 
 		}

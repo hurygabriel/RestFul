@@ -1,6 +1,10 @@
 package enumeration;
 
-
+/**
+ * Constante da situação do jogador
+ * @author hury
+ *
+ */
 
 public enum SituacaoJogador {
 	
