@@ -13,7 +13,7 @@ import controller.JogadorCtrl;
 import model.Jogador;
 
 /**
- * Classe que possui os caminhos e prove as chamadas aos atributos de
+ * Classe que possui os caminhos e provê as chamadas aos atributos de
  *  jogador convertidos em JSON.
  *  
  * @author hury
@@ -67,6 +67,4 @@ public class JogadorResource {
 	}
 	
 	
-	
-
 }

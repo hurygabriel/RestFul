@@ -44,7 +44,7 @@ uf varchar(2),
 posicao varchar(30),
 PRIMARY KEY(id)
 )
-
+select * from jogador
 INSERT INTO jogador VALUES ('Ronaldo','Ronaldinho','14/06/1994','70.5','1.80','Brasileiro','SP','ATACANTE'),
 ('Joao','Pele','01/01/1950','80.7','1.75','Brasileiro','RJ','ATACANTE'),
 ('Hury','Iuri','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO'),
@@ -158,13 +158,13 @@ CREATE VIEW v_jogadorClube
 as
 
 SELECT cb.nome as clube, cb.id as idclube,
-jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade, jog.id, jog.datanasc
+jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade, jog.id, jog.datanasc,jog.uf,jog.posicao
 from clube cb
 inner join contrato cont
 on cont.idclube = cb.id
 inner join jogador jog
 on jog.id = cont.idjogador
-group by cb.nome, cb.id, jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade, jog.id, jog.datanasc
+group by cb.nome, cb.id, jog.nome, jog.apelido, jog.altura, jog.peso, jog.naturalidade, jog.id, jog.datanasc,jog.uf,jog.posicao
 -------------------------
 drop view v_jogadorClube
 select * from v_jogadorClube where idclube = 1
