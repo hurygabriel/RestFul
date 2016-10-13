@@ -9,6 +9,7 @@ import java.util.List;
 
 import connection.ConnectionImpl;
 import connection.GenericConnection;
+import enumeration.UF;
 import model.Estadio;
 
 /**
@@ -40,8 +41,7 @@ public class EstadioDaoImpl implements EstadioDao {
 			e.setCapacidade(rs.getInt("capacidade"));
 			e.setDataInauguracao(rs.getString("dataInauguracao"));
 			e.setEndereco(rs.getString("endereco"));
-			e.setUf(rs.getString("uf"));
-			
+			e.setUf(UF.valueOf(rs.getString("uf")));
 			lista.add(e);
 		}
 		ps.close();
@@ -62,7 +62,7 @@ public class EstadioDaoImpl implements EstadioDao {
 			e.setCapacidade(rs.getInt("capacidade"));
 			e.setDataInauguracao(rs.getString("dataInauguracao"));
 			e.setEndereco(rs.getString("endereco"));
-			e.setUf(rs.getString("uf"));
+			e.setUf(UF.valueOf(rs.getString("uf")));
 		}
 		
 		ps.close();

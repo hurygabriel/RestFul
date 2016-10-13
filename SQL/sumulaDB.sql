@@ -15,8 +15,8 @@ endereco varchar(90),
 PRIMARY KEY(nome)
 )
 
-INSERT INTO	estadio values ('Itaquerao','sp',49205,'10/05/2014','Av. Miguel Ignácio Curi, 111 - Arthur Alvim, São Paulo - SP'),
-('Morumbi','sp',79039,'02/10/1960','Praça Roberto Gomes Pedrosa, 1 - Morumbi, São Paulo - SP')
+INSERT INTO	estadio values ('Itaquerao','SP',49205,'10/05/2014','Av. Miguel Ignácio Curi, 111 - Arthur Alvim, São Paulo - SP'),
+('Morumbi','SP',79039,'02/10/1960','Praça Roberto Gomes Pedrosa, 1 - Morumbi, São Paulo - SP')
 
 CREATE TABLE clube(
 id int not null identity,
@@ -31,7 +31,6 @@ FOREIGN KEY (estadio) REFERENCES estadio(nome)
 INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao'),
 ('02/02/2002','são paulo','Morumbi')
 
-
 CREATE TABLE jogador(
 id int not null identity,
 nome varchar(50),
@@ -44,7 +43,7 @@ uf varchar(2),
 posicao varchar(30),
 PRIMARY KEY(id)
 )
-select * from jogador
+
 INSERT INTO jogador VALUES ('Ronaldo','Ronaldinho','14/06/1994','70.5','1.80','Brasileiro','SP','ATACANTE'),
 ('Joao','Pele','01/01/1950','80.7','1.75','Brasileiro','RJ','ATACANTE'),
 ('Hury','Iuri','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO'),

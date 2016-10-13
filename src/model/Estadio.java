@@ -2,6 +2,8 @@ package model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import enumeration.UF;
+
 /**
  * Classe responsavel por guardar os atributos de Estadio
  * @author hury
@@ -12,21 +14,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Estadio {
 	
 	private String nome;
-	private String uf;
+	private UF uf;
 	private int capacidade;
 	private String dataInauguracao;
 	private String endereco;
-	
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getUf() {
+	public UF getUf() {
 		return uf;
 	}
-	public void setUf(String uf) {
+	public void setUf(UF uf) {
 		this.uf = uf;
 	}
 	public int getCapacidade() {
@@ -53,6 +54,8 @@ public class Estadio {
 		return "Estadio [nome=" + nome + ", uf=" + uf + ", capacidade=" + capacidade + ", dataInauguracao="
 				+ dataInauguracao + ", endereco=" + endereco + "]";
 	}
+	
+
 	
 	
 	

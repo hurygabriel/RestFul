@@ -14,8 +14,6 @@ public abstract interface GenericDao<T> {
 	void inclui(T obj) throws SQLException;
 
 	List<T> pesquisa() throws SQLException;
-
-	//T pesquisaUnico(Object obj) throws SQLException;
 	
 	void altera(T obj) throws SQLException;
 
