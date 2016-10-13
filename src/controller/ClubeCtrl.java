@@ -16,4 +16,8 @@ public class ClubeCtrl {
 		return cdao.pesquisa();
 	}
 	
+	public List<Clube> listaPorNome(String nome) throws SQLException{
+		return cdao.pesquisaNome(nome);
+	}
+	
 }
