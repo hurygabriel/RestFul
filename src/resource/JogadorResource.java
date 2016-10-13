@@ -26,8 +26,8 @@ public class JogadorResource {
 	@GET
 	@Path("/listarTodos")
 	@Produces("application/json")
-	public List<Jogador> listarTodos() throws SQLException, ParseException {
-		return new JogadorCtrl().listarTodos();
+	public List<Jogador> listarTodos() throws SQLException {
+		return new JogadorCtrl().listaTodos();
 
 	}
 
@@ -53,7 +53,7 @@ public class JogadorResource {
 	}
 	
 	@GET
-	@Path("listaPorUf/{posicao}")
+	@Path("listaPorPosicao/{posicao}")
 	@Produces("application/json")
 	public List<Jogador> listarPorPosicao(@PathParam("posicao") String posicao) throws SQLException {
 		return new JogadorCtrl().listarPorPosicao(posicao);

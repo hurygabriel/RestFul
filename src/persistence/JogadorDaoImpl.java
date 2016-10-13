@@ -20,6 +20,26 @@ public class JogadorDaoImpl implements JogadorDao {
 		c = gc.getConnection();
 	}
 
+	
+	private List<Jogador> constructor(ResultSet rs) throws SQLException {
+		List<Jogador> lista = new ArrayList<Jogador>();
+		while (rs.next()) {
+
+			Jogador j = new Jogador();
+			j.setId(rs.getInt("id"));
+			j.setNome(rs.getString("nome"));
+			j.setApelido(rs.getString("apelido"));
+			j.setDatanasc(rs.getString("datanasc"));
+			j.setPeso(rs.getFloat("peso"));
+			j.setAltura(rs.getFloat("altura"));
+			j.setNaturalidade(rs.getString("naturalidade"));
+			j.setUf(UF.valueOf(rs.getString("uf")));
+			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
+			lista.add(j);
+		}
+		return lista;
+	}
+
 	@Override
 	public List<Jogador> pesquisa() throws SQLException {
 		List<Jogador> lista = new ArrayList<Jogador>();
@@ -28,26 +48,8 @@ public class JogadorDaoImpl implements JogadorDao {
 		PreparedStatement ps = c.prepareStatement(query);
 		ResultSet rs = ps.executeQuery();
 
-		while (rs.next()) {
+        lista=constructor(rs);
 
-			Jogador j = new Jogador();
-			j.setId(rs.getInt("id"));
-			j.setNome(rs.getString("nome"));
-			j.setApelido(rs.getString("apelido"));
-
-			// SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			// String data = sdf.format(rs.getDate("datanasc"));
-			// System.out.println(data);
-			j.setDatanasc(rs.getString("datanasc"));
-			j.setPeso(rs.getFloat("peso"));
-			j.setAltura(rs.getFloat("altura"));
-			j.setNaturalidade(rs.getString("naturalidade"));
-			j.setUf(UF.valueOf(rs.getString("uf")));
-			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-			
-			lista.add(j);
-
-		}
 		ps.close();
 
 		return lista;
@@ -90,7 +92,7 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNaturalidade(rs.getString("naturalidade"));
 			j.setUf(UF.valueOf(rs.getString("uf")));
 			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-			
+
 		}
 		ps.close();
 		return j;
@@ -117,7 +119,7 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNaturalidade(rs.getString("naturalidade"));
 			j.setUf(UF.valueOf(rs.getString("uf")));
 			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-			
+
 			lista.add(j);
 
 		}
@@ -129,10 +131,10 @@ public class JogadorDaoImpl implements JogadorDao {
 	@Override
 	public List<Jogador> pesquisaPorNome(String nome) throws SQLException {
 		List<Jogador> lista = new ArrayList<Jogador>();
-		String query = "SELECT * FROM jogador WHERE nome LIKE %?%";
+		String query = "SELECT * FROM jogador WHERE nome LIKE ?";
 
 		PreparedStatement ps = c.prepareStatement(query);
-		ps.setString(1, nome);
+		ps.setString(1, "%" + nome + "%");
 		ResultSet rs = ps.executeQuery();
 
 		while (rs.next()) {
@@ -147,7 +149,7 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNaturalidade(rs.getString("naturalidade"));
 			j.setUf(UF.valueOf(rs.getString("uf")));
 			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-			
+
 			lista.add(j);
 
 		}
@@ -163,7 +165,7 @@ public class JogadorDaoImpl implements JogadorDao {
 		String query = "SELECT * FROM jogador WHERE uf LIKE ?";
 
 		PreparedStatement ps = c.prepareStatement(query);
-		ps.setString(1, uf);
+		ps.setString(1, "%" + uf + "%");
 		ResultSet rs = ps.executeQuery();
 
 		while (rs.next()) {
@@ -178,14 +180,14 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNaturalidade(rs.getString("naturalidade"));
 			j.setUf(UF.valueOf(rs.getString("uf")));
 			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-			
+
 			lista.add(j);
 
 		}
 		ps.close();
 
 		return lista;
-		
+
 	}
 
 	@Override
@@ -194,9 +196,9 @@ public class JogadorDaoImpl implements JogadorDao {
 		String query = "SELECT * FROM jogador WHERE posicao LIKE ?";
 
 		PreparedStatement ps = c.prepareStatement(query);
-		ps.setString(1, posicao);
+		ps.setString(1, "%" + posicao + "%");
 		ResultSet rs = ps.executeQuery();
-		
+
 		while (rs.next()) {
 
 			Jogador j = new Jogador();
@@ -209,7 +211,7 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNaturalidade(rs.getString("naturalidade"));
 			j.setUf(UF.valueOf(rs.getString("uf")));
 			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-			
+
 			lista.add(j);
 
 		}

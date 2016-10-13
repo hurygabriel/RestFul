@@ -1,7 +1,6 @@
 package controller;
 
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.List;
 
 import model.Jogador;
@@ -16,7 +15,7 @@ public class JogadorCtrl {
 
 	JogadorDao jdao = new JogadorDaoImpl();
 	
-	public List<Jogador> listarTodos() throws SQLException, ParseException{
+	public List<Jogador> listaTodos() throws SQLException{
 		return jdao.pesquisa();
 	}
 
