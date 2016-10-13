@@ -4,9 +4,9 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.List;
 
+import enumeration.SituacaoJuiz;
 import enumeration.UF;
 import model.Arbitro;
-import model.Situacao;
 import persistence.ArbitroDao;
 import persistence.ArbitroDaoImpl;
 
@@ -26,7 +26,7 @@ public class ArbitroCtrl {
 		return aDao.pesquisaPorUF(uf);
 	}
 	
-	public List<Arbitro> listaPorSituacao(Situacao situacao)throws SQLException, ParseException{
+	public List<Arbitro> listaPorSituacao(SituacaoJuiz situacao)throws SQLException, ParseException{
 		return aDao.pesquisaPorSituacao(situacao);
 	}
 }

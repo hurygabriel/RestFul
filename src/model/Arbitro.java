@@ -1,7 +1,7 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 import enumeration.SituacaoJuiz;
@@ -23,7 +23,18 @@ public class Arbitro {
 	private String ufDescricao;
 	private SituacaoJuiz situacao;
 	private String situaçãoDescritivo;
+	private ArrayList<Sentenca> listaSentenca;
 	
+	public Arbitro(ArrayList<Sentenca> listaSentenca){
+		this.listaSentenca = listaSentenca;
+	}
+	
+	
+	public Arbitro() {
+		super();
+	}
+
+
 	public int getId() {
 		return id;
 	}
@@ -65,6 +76,15 @@ public class Arbitro {
 	}
 	public void setSituaçãoDescritivo(String situaçãoDescritivo) {
 		this.situaçãoDescritivo = situaçãoDescritivo;
+	}
+	public ArrayList<Sentenca> getListaSentenca() {
+		if(listaSentenca == null){
+			listaSentenca = new ArrayList<Sentenca>();
+		}
+		return listaSentenca;
+	}
+	public void setListaSentenca(ArrayList<Sentenca> listaSentenca) {
+		this.listaSentenca = listaSentenca;
 	}
 	
 	
