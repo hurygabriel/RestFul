@@ -21,7 +21,7 @@ public class JogadorDaoImpl implements JogadorDao {
 	}
 
 	
-	private List<Jogador> constructor(ResultSet rs) throws SQLException {
+	private List<Jogador> preencher(ResultSet rs) throws SQLException {
 		List<Jogador> lista = new ArrayList<Jogador>();
 		while (rs.next()) {
 
@@ -48,7 +48,7 @@ public class JogadorDaoImpl implements JogadorDao {
 		PreparedStatement ps = c.prepareStatement(query);
 		ResultSet rs = ps.executeQuery();
 
-        lista=constructor(rs);
+        lista=preencher(rs);
 
 		ps.close();
 
@@ -107,22 +107,8 @@ public class JogadorDaoImpl implements JogadorDao {
 		ps.setInt(1, id);
 		ResultSet rs = ps.executeQuery();
 
-		while (rs.next()) {
-
-			Jogador j = new Jogador();
-			j.setId(rs.getInt("id"));
-			j.setNome(rs.getString("nome"));
-			j.setApelido(rs.getString("apelido"));
-			j.setDatanasc(rs.getString("datanasc"));
-			j.setPeso(rs.getFloat("peso"));
-			j.setAltura(rs.getFloat("altura"));
-			j.setNaturalidade(rs.getString("naturalidade"));
-			j.setUf(UF.valueOf(rs.getString("uf")));
-			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-
-			lista.add(j);
-
-		}
+		lista=preencher(rs);
+		
 		ps.close();
 
 		return lista;
@@ -137,22 +123,7 @@ public class JogadorDaoImpl implements JogadorDao {
 		ps.setString(1, "%" + nome + "%");
 		ResultSet rs = ps.executeQuery();
 
-		while (rs.next()) {
-
-			Jogador j = new Jogador();
-			j.setId(rs.getInt("id"));
-			j.setNome(rs.getString("nome"));
-			j.setApelido(rs.getString("apelido"));
-			j.setDatanasc(rs.getString("datanasc"));
-			j.setPeso(rs.getFloat("peso"));
-			j.setAltura(rs.getFloat("altura"));
-			j.setNaturalidade(rs.getString("naturalidade"));
-			j.setUf(UF.valueOf(rs.getString("uf")));
-			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-
-			lista.add(j);
-
-		}
+		lista=preencher(rs);
 		ps.close();
 
 		return lista;
@@ -168,22 +139,7 @@ public class JogadorDaoImpl implements JogadorDao {
 		ps.setString(1, "%" + uf + "%");
 		ResultSet rs = ps.executeQuery();
 
-		while (rs.next()) {
-
-			Jogador j = new Jogador();
-			j.setId(rs.getInt("id"));
-			j.setNome(rs.getString("nome"));
-			j.setApelido(rs.getString("apelido"));
-			j.setDatanasc(rs.getString("datanasc"));
-			j.setPeso(rs.getFloat("peso"));
-			j.setAltura(rs.getFloat("altura"));
-			j.setNaturalidade(rs.getString("naturalidade"));
-			j.setUf(UF.valueOf(rs.getString("uf")));
-			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-
-			lista.add(j);
-
-		}
+		lista=preencher(rs);
 		ps.close();
 
 		return lista;
@@ -199,22 +155,7 @@ public class JogadorDaoImpl implements JogadorDao {
 		ps.setString(1, "%" + posicao + "%");
 		ResultSet rs = ps.executeQuery();
 
-		while (rs.next()) {
-
-			Jogador j = new Jogador();
-			j.setId(rs.getInt("id"));
-			j.setNome(rs.getString("nome"));
-			j.setApelido(rs.getString("apelido"));
-			j.setDatanasc(rs.getString("datanasc"));
-			j.setPeso(rs.getFloat("peso"));
-			j.setAltura(rs.getFloat("altura"));
-			j.setNaturalidade(rs.getString("naturalidade"));
-			j.setUf(UF.valueOf(rs.getString("uf")));
-			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
-
-			lista.add(j);
-
-		}
+		lista=preencher(rs);
 		ps.close();
 
 		return lista;
