@@ -113,6 +113,23 @@ public class JogadorDaoImpl implements JogadorDao {
 
 		return lista;
 	}
+	
+	//Sobrecarga
+	@Override
+	public List<Jogador> pesquisaPorClube(String nome) throws SQLException {
+		List<Jogador> lista = new ArrayList<Jogador>();
+		String query = "SELECT * FROM v_jogadorClube WHERE clube like ?";
+
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setString(1, "%" + nome + "%");
+		ResultSet rs = ps.executeQuery();
+
+		lista=preencher(rs);
+		
+		ps.close();
+
+		return lista;
+	}
 
 	@Override
 	public List<Jogador> pesquisaPorNome(String nome) throws SQLException {

@@ -19,8 +19,12 @@ public class JogadorCtrl {
 		return jdao.pesquisa();
 	}
 
-	public List<Jogador> listarPorClube(int id)throws SQLException{
+	public List<Jogador> listarPorClubeId(int id)throws SQLException{
 		return jdao.pesquisaPorClube(id);
+	}
+	
+	public List<Jogador> listarPorClubeNome(String nome)throws SQLException{
+		return jdao.pesquisaPorClube(nome);
 	}
 	
 	public List<Jogador> listarPorNome(String nome)throws SQLException{

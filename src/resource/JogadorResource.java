@@ -32,10 +32,17 @@ public class JogadorResource {
 	}
 
 	@GET
-	@Path("listaPorClube/{id}")
+	@Path("listaPorClubeId/{id}")
 	@Produces("application/json")
 	public List<Jogador> listarPorClube(@PathParam("id") int id) throws SQLException {
-		return new JogadorCtrl().listarPorClube(id);
+		return new JogadorCtrl().listarPorClubeId(id);
+	}
+	
+	@GET
+	@Path("listaPorClubeNome/{nome}")
+	@Produces("application/json")
+	public List<Jogador> listarPorClube(@PathParam("nome") String nome) throws SQLException {
+		return new JogadorCtrl().listarPorClubeNome(nome);
 	}
 	
 	@GET
