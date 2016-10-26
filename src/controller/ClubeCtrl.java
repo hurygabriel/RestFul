@@ -20,4 +20,8 @@ public class ClubeCtrl {
 		return cdao.pesquisaNome(nome);
 	}
 	
+	public Clube listaPorId(int id) throws SQLException{
+		return cdao.pesquisaUnico(id);
+	}
+	
 }

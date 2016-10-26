@@ -28,5 +28,11 @@ public class ClubeResource {
 		return new ClubeCtrl().listaPorNome(nome);
 	}
 	
+	@GET
+	@Path("/listaPorId/{id}")
+	@Produces("application/json")
+	public Clube listaPorId(@PathParam("id") int id) throws SQLException{
+		return new ClubeCtrl().listaPorId(id);
+	}
 	
 }
