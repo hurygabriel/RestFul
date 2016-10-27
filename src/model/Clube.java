@@ -2,6 +2,8 @@ package model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import enumeration.UF;
+
 /**
  * Classe responsável por guardar os atributos de clube
  * 
@@ -16,6 +18,8 @@ public class Clube {
 	private String dataFundacao;
 	private String nome;
 	private Estadio estadio;
+	private UF uf;
+	private Tecnico tecnico;
 
 	public int getId() {
 		return id;
@@ -49,9 +53,29 @@ public class Clube {
 		this.estadio = estadio;
 	}
 
+	public UF getUf() {
+		return uf;
+	}
+
+	public void setUf(UF uf) {
+		this.uf = uf;
+	}
+
+	public Tecnico getTecnico() {
+		return tecnico;
+	}
+
+	public void setTecnico(Tecnico tecnico) {
+		this.tecnico = tecnico;
+	}
+
 	@Override
 	public String toString() {
-		return "Clube [id=" + id + ", dataFundacao=" + dataFundacao + ", nome=" + nome + ", estadio=" + estadio + "]";
+		return "Clube [id=" + id + ", dataFundacao=" + dataFundacao + ", nome=" + nome + ", estadio=" + estadio
+				+ ", uf=" + uf + ", tecnico=" + tecnico + "]";
 	}
+
+
+
 
 }

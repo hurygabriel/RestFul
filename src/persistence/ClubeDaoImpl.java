@@ -9,6 +9,7 @@ import java.util.List;
 
 import connection.ConnectionImpl;
 import connection.GenericConnection;
+import enumeration.UF;
 import model.Clube;
 
 public class ClubeDaoImpl implements ClubeDao {
@@ -36,14 +37,14 @@ public class ClubeDaoImpl implements ClubeDao {
 		EstadioDao edao = new EstadioDaoImpl();
 
 		while (rs.next()) {
-			Clube c = new Clube();
+			Clube cb = new Clube();
 			// pesquisa o estadio, traz todos seus atributos
-			c.setEstadio(edao.pesquisaUnico(rs.getString("estadio")));
-			c.setId(rs.getInt("id"));
-			c.setNome(rs.getString("nome"));
-			c.setDataFundacao(rs.getString("dataFundacao"));
-
-			lista.add(c);
+			cb.setEstadio(edao.pesquisaUnico(rs.getString("estadio")));
+			cb.setId(rs.getInt("id"));
+			cb.setNome(rs.getString("nome"));
+			cb.setDataFundacao(rs.getString("dataFundacao"));
+			cb.setUf(UF.valueOf(rs.getString("uf")));
+			lista.add(cb);
 		}
 
 		ps.close();
@@ -77,6 +78,7 @@ public class ClubeDaoImpl implements ClubeDao {
 			cb.setId(rs.getInt("id"));
 			cb.setNome(rs.getString("nome"));
 			cb.setDataFundacao(rs.getString("dataFundacao"));
+			cb.setUf(UF.valueOf(rs.getString("uf")));
 		}
 
 		ps.close();
@@ -95,14 +97,15 @@ public class ClubeDaoImpl implements ClubeDao {
 		EstadioDao edao = new EstadioDaoImpl();
 
 		while (rs.next()) {
-			Clube c = new Clube();
+			Clube cb = new Clube();
 			// pesquisa o estadio, traz todos seus atributos
-			c.setEstadio(edao.pesquisaUnico(rs.getString("estadio")));
-			c.setId(rs.getInt("id"));
-			c.setNome(rs.getString("nome"));
-			c.setDataFundacao(rs.getString("dataFundacao"));
+			cb.setEstadio(edao.pesquisaUnico(rs.getString("estadio")));
+			cb.setId(rs.getInt("id"));
+			cb.setNome(rs.getString("nome"));
+			cb.setDataFundacao(rs.getString("dataFundacao"));
+			cb.setUf(UF.valueOf(rs.getString("uf")));
 
-			lista.add(c);
+			lista.add(cb);
 		}
 
 		ps.close();
