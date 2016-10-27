@@ -6,9 +6,9 @@ SÃO PAULO 2016
 
 ## Autores
 
-HURY GABRIEL A.B DE JESUS<br>
-PEDRO ZUZI<br>
-THIAGO LEONETTE DA CRUZ<br>
+[HURY GABRIEL A.B DE JESUS](https://github.com/BlueTub)<br>
+[PEDRO ZUZI](https://github.com/PedroZZ)<br>
+[THIAGO LEONETTE DA CRUZ](https://github.com/thiagoleonette)<br>
 
 
 ## Introdução
@@ -24,9 +24,14 @@ Para desenvolver este projeto, foi realizado uma pesquisa dos últimos casos de 
 ### Links
 
 Também faz parte do projeto; <br>
+* [APP ANDROID](https://github.com/BlueTub/SumulaEletronica)<br>
 * [WebService](https://github.com/BlueTub/RestFul)<br>
 * [Query SQL](https://github.com/BlueTub/RestFul/blob/master/SQL/sumulaDB.sql)<br>
 
 ### Palavras Chave
 
 Futebol; Sumula; Web Service; Android; Mobile; Java; SQL; RestFul; JSON;
+
+
+    
+
