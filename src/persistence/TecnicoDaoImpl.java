@@ -11,6 +11,11 @@ import connection.ConnectionImpl;
 import connection.GenericConnection;
 import model.Tecnico;
 
+/**
+ * Persistencia do tecnico de um clube.
+ * @author hury
+ *
+ */
 public class TecnicoDaoImpl implements TecnicoDao {
 
 	private Connection c;

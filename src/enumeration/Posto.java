@@ -1,5 +1,10 @@
 package enumeration;
 
+/**
+ * Constante de posto dos jogadores
+ * @author hury
+ *
+ */
 public enum Posto {
 
 	TITULAR("Titular"), RESERVA("Reserva");

@@ -1,10 +1,13 @@
 package model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Classe responsável pelos atributos do técnico de um clube
  * @author hury
  *
  */
+@XmlRootElement
 public class Tecnico {
 
 	private int id;

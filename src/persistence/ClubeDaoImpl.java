@@ -12,6 +12,11 @@ import connection.GenericConnection;
 import enumeration.UF;
 import model.Clube;
 
+/**
+ * Persistencia do clube
+ * @author hury
+ *
+ */
 public class ClubeDaoImpl implements ClubeDao {
 	private Connection c;
 	EstadioDao edao = new EstadioDaoImpl();

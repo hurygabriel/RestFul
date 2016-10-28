@@ -7,7 +7,7 @@ import model.Jogador;
 
 public interface JogadorDao extends GenericDao<Jogador> {
 
-	Jogador pesquisaUnico(int obj) throws SQLException;
+	Jogador pesquisaUnico(int id) throws SQLException;
 	
 	List<Jogador> pesquisaPorClube(int id) throws SQLException; 
 	List<Jogador> pesquisaPorClube(String nome) throws SQLException; 

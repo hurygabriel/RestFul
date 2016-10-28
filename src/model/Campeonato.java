@@ -1,12 +1,15 @@
 
 package model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Classe responsável pelos atributos do campeonato
  * 
  * @author hury
  *
  */
+@XmlRootElement
 public class Campeonato {
 	
 	private int id;

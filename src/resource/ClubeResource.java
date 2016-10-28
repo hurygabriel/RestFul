@@ -11,6 +11,11 @@ import javax.ws.rs.Produces;
 import controller.ClubeCtrl;
 import model.Clube;
 
+/**
+ * Classe que possui os metodos de um clube a serem consumidos pelo JSON.
+ * @author hury
+ *
+ */
 @Path("/clube")
 public class ClubeResource {
 

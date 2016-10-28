@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import enumeration.TipoContrato;
 
 /**
- * 
+ * Classe que possui os atributos de contrato
  * @author hury
  *
  */

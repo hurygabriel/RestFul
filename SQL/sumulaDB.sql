@@ -213,11 +213,10 @@ INSERT INTO contrato VALUES (111,'DEFINITIVO','01/01/2015','01/01/2017',1,1),
 
 CREATE TABLE escalacao(
 id INT NOT NULL identity,
---idlistajog INT NOT NULL,
 idclube INT NOT NULL,
 data varchar(10) NOT NULL,
+
 PRIMARY KEY(id),
---FOREIGN KEY(idlistajog) REFERENCES listajog(id),
 FOREIGN KEY(idclube) REFERENCES clube(id)
 )
 
@@ -225,16 +224,15 @@ INSERT INTO escalacao VALUES
 (1,'27/10/2016'),(2,'27/10/2016')
 
 CREATE TABLE listajog(
-id int not null, --arrumar
+idescalacao int not null,
 idjogador int not null,
 posto varchar(8) not null check (posto='TITULAR' or posto='RESERVA'),
---posicao varchar(20),
 camisa varchar(3),
-idescalacao int not null,
-PRIMARY KEY(id),
-FOREIGN KEY(idjogador) REFERENCES jogador(id),
-FOREIGN KEY(idescalacao) REFERENCES escalacao(id)
+
+FOREIGN KEY(idescalacao) REFERENCES escalacao(id),
+FOREIGN KEY(idjogador) REFERENCES jogador(id)
 )
+
 
 INSERT INTO listajog VALUES
 --time a
@@ -286,9 +284,7 @@ INSERT INTO listajog VALUES
 
 
 
-
 ------------até aqui ok
-
 
 
 CREATE TABLE titulo(

@@ -10,6 +10,12 @@ import javax.ws.rs.Produces;
 import controller.ContratoCtrl;
 import model.Contrato;
 
+/**
+ * Classe que possui os metodos de contrato a serem consumidos pelo JSON.
+ * @author hury
+ *
+ */
+
 @Path("/contrato")
 public class ContratoResource {
 	@GET

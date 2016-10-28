@@ -11,7 +11,11 @@ import connection.ConnectionImpl;
 import connection.GenericConnection;
 import enumeration.TipoContrato;
 import model.Contrato;
-
+/**
+ * Persistencia dos constratos de jogadores.
+ * @author hury
+ *
+ */
 public class ContratoDaoImpl implements ContratoDao {
 	private Connection c;
 

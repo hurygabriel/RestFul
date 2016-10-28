@@ -1,5 +1,10 @@
 package enumeration;
 
+/**
+ * Constantes de posicao de um jogo, dos jogadores.
+ * @author hury
+ *
+ */
 public enum PosicaoJogador {
 
     ATACANTE("Atacante"), GOLEIRO("Goleiro"),
