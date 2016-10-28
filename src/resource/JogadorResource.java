@@ -1,7 +1,6 @@
 package resource;
 
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.List;
 
 import javax.ws.rs.GET;

@@ -9,10 +9,8 @@ import java.util.List;
 
 import connection.ConnectionImpl;
 import connection.GenericConnection;
-import enumeration.UF;
-import model.Clube;
 import model.Escalacao;
-import model.Jogador;
+
 
 /**
  * 

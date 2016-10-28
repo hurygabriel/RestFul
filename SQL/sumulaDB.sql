@@ -59,74 +59,74 @@ INSERT INTO jogador VALUES
 ('Ronaldo','Ronaldinho','14/06/1994','70.5','1.80','Brasileiro','SP','ATACANTE'),
 ('Joao','Pele','01/01/1950','80.7','1.75','Brasileiro','RJ','ATACANTE'),
 ('Hury','Iuri','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO'),
-('Pedro','ZUZI','01/01/1993','75','1.90','Brasileiro','RJ','GOLEIRO')
+('Pedro','ZUZI','01/01/1993','75','1.90','Brasileiro','RJ','GOLEIRO'),
 
 --TIME A
-('Nome1','Apelido1','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO')
-('Nome2','Apelido2','02/01/1994','70','1.80','Brasileiro','MA','GOLEIRO')
+('Nome1','Apelido1','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO'),
+('Nome2','Apelido2','02/01/1994','70','1.80','Brasileiro','MA','GOLEIRO'),
 
-('Nome3','Apelido3','03/01/1994','70','1.80','Brasileiro','RJ','ATACANTE')
-('Nome4','Apelido4','04/01/1994','70','1.80','Brasileiro','MT','ATACANTE')
+('Nome3','Apelido3','03/01/1994','70','1.80','Brasileiro','RJ','ATACANTE'),
+('Nome4','Apelido4','04/01/1994','70','1.80','Brasileiro','MT','ATACANTE'),
 
-('Nome5','Apelido5','05/01/1994','70','1.80','Brasileiro','AC','ATACANTE')
-('Nome6','Apelido6','06/01/1994','70','1.80','Brasileiro','MS','ATACANTE')
+('Nome5','Apelido5','05/01/1994','70','1.80','Brasileiro','AC','ATACANTE'),
+('Nome6','Apelido6','06/01/1994','70','1.80','Brasileiro','MS','ATACANTE'),
 
-('Nome7','Apelido7','07/01/1994','70','1.80','Brasileiro','AL','LATERALE')
-('Nome8','Apelido8','08/01/1994','70','1.80','Brasileiro','MG','LATERALE')
+('Nome7','Apelido7','07/01/1994','70','1.80','Brasileiro','AL','LATERALE'),
+('Nome8','Apelido8','08/01/1994','70','1.80','Brasileiro','MG','LATERALE'),
 
-('Nome9','Apelido9','09/01/1994','70','1.80','Brasileiro','AP','LATERALD')
-('Nome10','Apelido10','10/01/1994','70','1.80','Brasileiro','PA','LATERALD')
+('Nome9','Apelido9','09/01/1994','70','1.80','Brasileiro','AP','LATERALD'),
+('Nome10','Apelido10','10/01/1994','70','1.80','Brasileiro','PA','LATERALD'),
 
-('Nome11','Apelido11','11/01/1994','70','1.80','Brasileiro','AM','MEIA')
-('Nome12','Apelido12','12/01/1994','70','1.80','Brasileiro','PB','MEIA')
+('Nome11','Apelido11','11/01/1994','70','1.80','Brasileiro','AM','MEIA'),
+('Nome12','Apelido12','12/01/1994','70','1.80','Brasileiro','PB','MEIA'),
 
-('Nome13','Apelido13','13/01/1994','70','1.80','Brasileiro','BA','MEIA')
-('Nome14','Apelido14','14/01/1994','70','1.80','Brasileiro','PR','MEIA')
+('Nome13','Apelido13','13/01/1994','70','1.80','Brasileiro','BA','MEIA'),
+('Nome14','Apelido14','14/01/1994','70','1.80','Brasileiro','PR','MEIA'),
 
-('Nome15','Apelido15','15/01/1994','70','1.80','Brasileiro','CE','ZAGUEIRO')
-('Nome16','Apelido16','16/01/1994','70','1.80','Brasileiro','PE','ZAGUEIRO')
+('Nome15','Apelido15','15/01/1994','70','1.80','Brasileiro','CE','ZAGUEIRO'),
+('Nome16','Apelido16','16/01/1994','70','1.80','Brasileiro','PE','ZAGUEIRO'),
 
-('Nome17','Apelido17','17/01/1994','70','1.80','Brasileiro','DF','ZAGUEIRO')
-('Nome18','Apelido18','18/01/1994','70','1.80','Brasileiro','PI','ZAGUEIRO')
+('Nome17','Apelido17','17/01/1994','70','1.80','Brasileiro','DF','ZAGUEIRO'),
+('Nome18','Apelido18','18/01/1994','70','1.80','Brasileiro','PI','ZAGUEIRO'),
 
-('Nome19','Apelido19','19/01/1994','70','1.80','Brasileiro','ES','VOLANTE')
-('Nome20','Apelido20','20/01/1994','70','1.80','Brasileiro','RN','VOLANTE')
+('Nome19','Apelido19','19/01/1994','70','1.80','Brasileiro','ES','VOLANTE'),
+('Nome20','Apelido20','20/01/1994','70','1.80','Brasileiro','RN','VOLANTE'),
 
-('Nome21','Apelido21','21/01/1994','70','1.80','Brasileiro','GO','VOLANTE')
-('Nome22','Apelido22','22/01/1994','70','1.80','Brasileiro','RS','VOLANTE')
+('Nome21','Apelido21','21/01/1994','70','1.80','Brasileiro','GO','VOLANTE'),
+('Nome22','Apelido22','22/01/1994','70','1.80','Brasileiro','RS','VOLANTE'),
 
 -------- TIME B
-('Nome23','Apelido23','01/02/1994','70','1.80','Brasileiro','SP','GOLEIRO')
-('Nome24','Apelido24','02/02/1994','70','1.80','Brasileiro','MA','GOLEIRO')
+('Nome23','Apelido23','01/02/1994','70','1.80','Brasileiro','SP','GOLEIRO'),
+('Nome24','Apelido24','02/02/1994','70','1.80','Brasileiro','MA','GOLEIRO'),
 
-('Nome25','Apelido25','03/02/1994','70','1.80','Brasileiro','RJ','ATACANTE')
-('Nome26','Apelido26','04/02/1994','70','1.80','Brasileiro','MT','ATACANTE')
+('Nome25','Apelido25','03/02/1994','70','1.80','Brasileiro','RJ','ATACANTE'),
+('Nome26','Apelido26','04/02/1994','70','1.80','Brasileiro','MT','ATACANTE'),
 
-('Nome27','Apelido27','05/02/1994','70','1.80','Brasileiro','AC','ATACANTE')
-('Nome28','Apelido28','06/02/1994','70','1.80','Brasileiro','MS','ATACANTE')
+('Nome27','Apelido27','05/02/1994','70','1.80','Brasileiro','AC','ATACANTE'),
+('Nome28','Apelido28','06/02/1994','70','1.80','Brasileiro','MS','ATACANTE'),
 
-('Nome29','Apelido29','07/02/1994','70','1.80','Brasileiro','AL','LATERALE')
-('Nome30','Apelido30','08/02/1994','70','1.80','Brasileiro','MG','LATERALE')
+('Nome29','Apelido29','07/02/1994','70','1.80','Brasileiro','AL','LATERALE'),
+('Nome30','Apelido30','08/02/1994','70','1.80','Brasileiro','MG','LATERALE'),
 
-('Nome31','Apelido31','09/02/1994','70','1.80','Brasileiro','AP','LATERALD')
-('Nome32','Apelido32','10/02/1994','70','1.80','Brasileiro','PA','LATERALD')
+('Nome31','Apelido31','09/02/1994','70','1.80','Brasileiro','AP','LATERALD'),
+('Nome32','Apelido32','10/02/1994','70','1.80','Brasileiro','PA','LATERALD'),
 
-('Nome33','Apelido33','11/02/1994','70','1.80','Brasileiro','AM','MEIA')
-('Nome34','Apelido34','12/02/1994','70','1.80','Brasileiro','PB','MEIA')
+('Nome33','Apelido33','11/02/1994','70','1.80','Brasileiro','AM','MEIA'),
+('Nome34','Apelido34','12/02/1994','70','1.80','Brasileiro','PB','MEIA'),
 
-('Nome35','Apelido35','13/02/1994','70','1.80','Brasileiro','BA','MEIA')
-('Nome36','Apelido36','14/02/1994','70','1.80','Brasileiro','PR','MEIA')
+('Nome35','Apelido35','13/02/1994','70','1.80','Brasileiro','BA','MEIA'),
+('Nome36','Apelido36','14/02/1994','70','1.80','Brasileiro','PR','MEIA'),
 
-('Nome37','Apelido37','15/02/1994','70','1.80','Brasileiro','CE','ZAGUEIRO')
-('Nome38','Apelido38','16/02/1994','70','1.80','Brasileiro','PE','ZAGUEIRO')
+('Nome37','Apelido37','15/02/1994','70','1.80','Brasileiro','CE','ZAGUEIRO'),
+('Nome38','Apelido38','16/02/1994','70','1.80','Brasileiro','PE','ZAGUEIRO'),
 
-('Nome39','Apelido39','17/02/1994','70','1.80','Brasileiro','DF','ZAGUEIRO')
-('Nome40','Apelido40','18/02/1994','70','1.80','Brasileiro','PI','ZAGUEIRO')
+('Nome39','Apelido39','17/02/1994','70','1.80','Brasileiro','DF','ZAGUEIRO'),
+('Nome40','Apelido40','18/02/1994','70','1.80','Brasileiro','PI','ZAGUEIRO'),
 
-('Nome41','Apelido41','19/02/1994','70','1.80','Brasileiro','ES','VOLANTE')
-('Nome42','Apelido42','20/02/1994','70','1.80','Brasileiro','RN','VOLANTE')
+('Nome41','Apelido41','19/02/1994','70','1.80','Brasileiro','ES','VOLANTE'),
+('Nome42','Apelido42','20/02/1994','70','1.80','Brasileiro','RN','VOLANTE'),
 
-('Nome43','Apelido43','21/02/1994','70','1.80','Brasileiro','GO','VOLANTE')
+('Nome43','Apelido43','21/02/1994','70','1.80','Brasileiro','GO','VOLANTE'),
 ('Nome44','Apelido44','22/02/1994','70','1.80','Brasileiro','RS','VOLANTE')
 
 CREATE TABLE situacao(
@@ -144,8 +144,8 @@ FOREIGN KEY (idjogador) references jogador(id),
 FOREIGN KEY (situacao) references situacao(nome)
 )
 
-INSERT INTO	situacaojogador VALUES ('01/01/2015', 1, 'MACHUCADO'),('01/01/2015', 2, 'SUSPENSO'),('01/01/2015', 3, 'PUNICAO'),('01/01/2015', 4, 'OK')
-('01/01/2015', 5, 'OK'),
+INSERT INTO	situacaojogador VALUES ('01/01/2015', 1, 'MACHUCADO'),('01/01/2015', 2, 'SUSPENSO'),('01/01/2015', 3, 'PUNICAO'),('01/01/2015', 4, 'OK'),
+('01/01/2015', 5, 'OK')
 
 
 CREATE TABLE contrato(
@@ -189,57 +189,107 @@ INSERT INTO contrato VALUES (111,'DEFINITIVO','01/01/2015','01/01/2017',1,1),
 (26, 'DEFINITIVO', '01/01/2015', '01/01/2017', 1, 26),
 --time b
 (27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
-(27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
+(28, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 28),
+(29, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 29),
+(30, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 30),
+(31, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 31),
+(32, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 32),
+(33, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 33),
+(34, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 34),
+(35, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 35),
+(36, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 36),
+(37, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 37),
+(38, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 38),
+(39, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 39),
+(40, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 40),
+(41, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 41),
+(42, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 42),
+(43, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 43),
+(44, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 43),
+(45, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 45),
+(46, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 46),
+(47, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 47),
 (48, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 48)
 
-CREATE TABLE listajog(
-id int not null identity,
-idjogador int not null,
-posto varchar(8) not null check (posto='titular'  or posto='reserva'),
-posicao varchar(20)
-PRIMARY KEY(id),
-FOREIGN KEY(idJogador) REFERENCES jogador(id)
-)
-
 CREATE TABLE escalacao(
-id INT NOT NULL IDENTITY,
-idlistajog INT NOT NULL,
+id INT NOT NULL identity,
+--idlistajog INT NOT NULL,
 idclube INT NOT NULL,
+data varchar(10) NOT NULL,
 PRIMARY KEY(id),
-FOREIGN KEY(idlistajog) REFERENCES listajog(id),
+--FOREIGN KEY(idlistajog) REFERENCES listajog(id),
 FOREIGN KEY(idclube) REFERENCES clube(id)
 )
 
+INSERT INTO escalacao VALUES
+(1,'27/10/2016'),(2,'27/10/2016')
+
+CREATE TABLE listajog(
+id int not null, --arrumar
+idjogador int not null,
+posto varchar(8) not null check (posto='TITULAR' or posto='RESERVA'),
+--posicao varchar(20),
+camisa varchar(3),
+idescalacao int not null,
+PRIMARY KEY(id),
+FOREIGN KEY(idjogador) REFERENCES jogador(id),
+FOREIGN KEY(idescalacao) REFERENCES escalacao(id)
+)
+
+INSERT INTO listajog VALUES
+--time a
+(1, 5, 'TITULAR','01'),
+(1, 6, 'RESERVA','02'),
+(1, 7, 'TITULAR','03'),
+(1, 8, 'RESERVA','04'),
+(1, 9, 'TITULAR','05'),
+(1, 10, 'RESERVA','06'),
+(1, 11, 'TITULAR','07'),
+(1, 12, 'RESERVA','08'),
+(1, 13, 'TITULAR','09'),
+(1, 14, 'RESERVA','10'),
+(1, 15, 'TITULAR','11'),
+(1, 16, 'RESERVA','12'),
+(1, 17, 'TITULAR','13'),
+(1, 18, 'RESERVA','14'),
+(1, 19, 'TITULAR','15'),
+(1, 20, 'RESERVA','16'),
+(1, 21, 'TITULAR','17'),
+(1, 22, 'RESERVA','18'),
+(1, 23, 'TITULAR','19'),
+(1, 24, 'RESERVA','20'),
+(1, 25, 'TITULAR','21'),
+(1, 26, 'RESERVA','22'),
+--time b
+(2, 27, 'TITULAR','01'),
+(2, 28, 'RESERVA','02'),
+(2, 29, 'TITULAR','03'),
+(2, 30, 'RESERVA','04'),
+(2, 31, 'TITULAR','05'),
+(2, 32, 'RESERVA','06'),
+(2, 33, 'TITULAR','07'),
+(2, 34, 'RESERVA','08'),
+(2, 35, 'TITULAR','09'),
+(2, 36, 'RESERVA','10'),
+(2, 37, 'TITULAR','11'),
+(2, 38, 'RESERVA','12'),
+(2, 39, 'TITULAR','13'),
+(2, 40, 'RESERVA','14'),
+(2, 41, 'TITULAR','15'),
+(2, 42, 'RESERVA','16'),
+(2, 43, 'TITULAR','17'),
+(2, 44, 'RESERVA','18'),
+(2, 45, 'TITULAR','19'),
+(2, 46, 'RESERVA','20'),
+(2, 47, 'TITULAR','21'),
+(2, 48, 'RESERVA','22')
+
+
+
+
 ------------até aqui ok
 
-CREATE TABLE escalacao(
-idEscalacao int not null,
-idJogador int not null,
-posto varchar(10),
-posicao varchar(20),
-PRIMARY KEY(idEscalacao),
-FOREIGN KEY(idJogador) REFERENCES jogador(id)
 
-)
 
 CREATE TABLE titulo(
 id int not null identity,

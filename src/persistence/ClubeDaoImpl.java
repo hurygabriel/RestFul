@@ -14,6 +14,8 @@ import model.Clube;
 
 public class ClubeDaoImpl implements ClubeDao {
 	private Connection c;
+	EstadioDao edao = new EstadioDaoImpl();
+	TecnicoDao tdao = new TecnicoDaoImpl();
 
 	public ClubeDaoImpl() {
 		GenericConnection gc = new ConnectionImpl();
@@ -33,9 +35,7 @@ public class ClubeDaoImpl implements ClubeDao {
 
 		PreparedStatement ps = c.prepareStatement(query);
 		ResultSet rs = ps.executeQuery();
-
-		EstadioDao edao = new EstadioDaoImpl();
-
+		
 		while (rs.next()) {
 			Clube cb = new Clube();
 			// pesquisa o estadio, traz todos seus atributos
@@ -44,6 +44,8 @@ public class ClubeDaoImpl implements ClubeDao {
 			cb.setNome(rs.getString("nome"));
 			cb.setDataFundacao(rs.getString("dataFundacao"));
 			cb.setUf(UF.valueOf(rs.getString("uf")));
+			cb.setTecnico(tdao.pesquisaUnicoId(rs.getInt("tecnico")));
+			
 			lista.add(cb);
 		}
 
@@ -72,13 +74,13 @@ public class ClubeDaoImpl implements ClubeDao {
 		ps.setInt(1, obj);
 		ResultSet rs = ps.executeQuery();
 
-		EstadioDao edao = new EstadioDaoImpl();
 		if (rs.next()) {
 			cb.setEstadio(edao.pesquisaUnico(rs.getString("estadio")));
 			cb.setId(rs.getInt("id"));
 			cb.setNome(rs.getString("nome"));
 			cb.setDataFundacao(rs.getString("dataFundacao"));
 			cb.setUf(UF.valueOf(rs.getString("uf")));
+			cb.setTecnico(tdao.pesquisaUnicoId(rs.getInt("tecnico")));
 		}
 
 		ps.close();
@@ -94,8 +96,6 @@ public class ClubeDaoImpl implements ClubeDao {
 		ps.setString(1, "%" + nome + "%");
 		ResultSet rs = ps.executeQuery();
 
-		EstadioDao edao = new EstadioDaoImpl();
-
 		while (rs.next()) {
 			Clube cb = new Clube();
 			// pesquisa o estadio, traz todos seus atributos
@@ -104,6 +104,7 @@ public class ClubeDaoImpl implements ClubeDao {
 			cb.setNome(rs.getString("nome"));
 			cb.setDataFundacao(rs.getString("dataFundacao"));
 			cb.setUf(UF.valueOf(rs.getString("uf")));
+			cb.setTecnico(tdao.pesquisaUnicoId(rs.getInt("tecnico")));
 
 			lista.add(cb);
 		}
