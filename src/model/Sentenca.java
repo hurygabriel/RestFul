@@ -5,6 +5,12 @@ import java.util.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Atributos de uma sentnca a um jogador, time.
+ * @author Thiago
+ *
+ */
+
 @XmlRootElement
 public class Sentenca {
 	

@@ -163,7 +163,7 @@ INSERT INTO contrato VALUES (111,'DEFINITIVO','01/01/2015','01/01/2017',1,1),
 (222,'RENOVACAO','02/02/2015','02/02/2017',2,2),
 (333,'EMPRESTIMO','01/01/2015','01/01/2017',1,3),
 (444,'RESCISAO','01/01/2015','01/01/2017',2,4),
---time a
+-- time a
 (5, 'DEFINITIVO', '01/01/2015', '01/01/2017', 1, 5),
 (6, 'DEFINITIVO', '01/01/2015', '01/01/2017', 1, 6),
 (7, 'DEFINITIVO', '01/01/2015', '01/01/2017', 1, 7),
@@ -186,7 +186,7 @@ INSERT INTO contrato VALUES (111,'DEFINITIVO','01/01/2015','01/01/2017',1,1),
 (24, 'DEFINITIVO', '01/01/2015', '01/01/2017', 1, 24),
 (25, 'DEFINITIVO', '01/01/2015', '01/01/2017', 1, 25),
 (26, 'DEFINITIVO', '01/01/2015', '01/01/2017', 1, 26),
---time b
+-- time b
 (27, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 27),
 (28, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 28),
 (29, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 29),
@@ -211,15 +211,14 @@ INSERT INTO contrato VALUES (111,'DEFINITIVO','01/01/2015','01/01/2017',1,1),
 (48, 'DEFINITIVO', '01/01/2015', '01/01/2017', 2, 48)
 
 CREATE TABLE escalacao(
-id INT NOT NULL identity,
+id INT NOT NULL AUTO_INCREMENT,
 idclube INT NOT NULL,
 data varchar(10) NOT NULL,
-
 PRIMARY KEY(id),
 FOREIGN KEY(idclube) REFERENCES clube(id)
 )
 
-INSERT INTO escalacao VALUES
+INSERT INTO escalacao (idclube, data) VALUES
 (1,'27/10/2016'),(2,'27/10/2016')
 
 CREATE TABLE listajog(
@@ -227,14 +226,13 @@ idescalacao int not null,
 idjogador int not null,
 posto varchar(8) not null check (posto='TITULAR' or posto='RESERVA'),
 camisa varchar(3),
-
 FOREIGN KEY(idescalacao) REFERENCES escalacao(id),
 FOREIGN KEY(idjogador) REFERENCES jogador(id)
 )
 
 
 INSERT INTO listajog VALUES
---time a
+-- time a
 (1, 5, 'TITULAR','01'),
 (1, 6, 'RESERVA','02'),
 (1, 7, 'TITULAR','03'),
@@ -257,7 +255,7 @@ INSERT INTO listajog VALUES
 (1, 24, 'RESERVA','20'),
 (1, 25, 'TITULAR','21'),
 (1, 26, 'RESERVA','22'),
---time b
+-- time b
 (2, 27, 'TITULAR','01'),
 (2, 28, 'RESERVA','02'),
 (2, 29, 'TITULAR','03'),
@@ -282,10 +280,59 @@ INSERT INTO listajog VALUES
 (2, 48, 'RESERVA','22')
 
 
+CREATE TABLE arbitro(
 
-------------até aqui ok
+id INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+dataNascimento DATE NOT NULL,
+uf VARCHAR(2),
+situacao VARCHAR(20),
+PRIMARY KEY(id)
+)
 
+INSERT INTO arbitro (nome, dataNascimento, uf, situacao) VALUES
+('teste', '1950/01/01', 'SP', 'DISPONIVEL'),
+('teste2', '1952/02/02', 'RJ', 'DISPONIVEL'),
+('teste3', '1953/03/03', 'SP', 'SUSPENSO')
 
+CREATE TABLE sentenca(
+
+id INT NOT NULL,
+idArbitro INT NOT NULL,
+valorPena DECIMAL(10,2),
+pontos INT,
+dataSentenca DATE NOT NULL,
+motivo VARCHAR(100),
+descricao VARCHAR(250),
+jogosPena INT NOT NULL,
+jogosPagos INT NOT NULL,
+PRIMARY KEY(id),
+FOREIGN KEY(idArbitro) REFERENCES arbitro(id))
+
+INSERT INTO sentenca VALUES(1, 1, 800.57, null, '2016/10/12', 
+'Empurrou um jogador', 'Empurrou o jogador neymar durante uma partida', 5, 2),
+(2, 3, 5800.58, null, '2016/10/11', 
+'Caiu na vila, penalty pro santos', 'Jogador do santos caiu na vila 
+e juizao nao deu penalty ', 5, 5)
+
+-- até aqui ok
+Select arb.id, arb.nome, arb.dataNascimento, arb.uf, arb.situacao,
+sent.valorPena, sent.pontos, sent.dataSentenca, sent.motivo, sent.descricao,
+sent.jogosPena, sent.jogosPagos from arbitro arb
+inner join sentenca sent
+on arb.id = sent.idArbitro
+ORDER BY arb.nome
+
+Select * from arbitro arb
+left join sentenca sent
+on arb.id = sent.idArbitro
+WHERE arb.uf = 'SP'
+ORDER BY arb.nome
+
+Select * from arbitro arb left join sentenca sent 
+on arb.id = sent.idArbitro WHERE nome LIKE '%teste%' ORDER BY arb.nome;
+
+--
 CREATE TABLE titulo(
 id int not null identity,
 nome VARCHAR(50),

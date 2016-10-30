@@ -8,7 +8,7 @@ import enumeration.SituacaoJuiz;
 import enumeration.UF;
 
 /**
- * 
+ * Atributos de um arbitro de uma partida de futebol
  * @author Thiago
  *
  */

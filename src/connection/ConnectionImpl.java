@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
-
 /**
  * Classe que realiza a conexão com o banco de dados
  * 
@@ -37,14 +35,11 @@ public class ConnectionImpl implements GenericConnection {
 			System.out.println("CONECTADO");
 
 		} catch (ClassNotFoundException e) {
-			System.out.println("classe nao encontrada");
-			JOptionPane.showMessageDialog(null, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
+			System.out.println("classe nao encontrada"+ e.getMessage());
 		} catch (SQLException e) {
-			System.out.println("sql");
-			JOptionPane.showMessageDialog(null, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
+			System.out.println("sql"+ e.getMessage());
 		} catch (Exception e) {
-			System.out.println("exception");
-			JOptionPane.showMessageDialog(null, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
+			System.out.println("exception"+ e.getMessage());
 		}
 		return con;
 	}
