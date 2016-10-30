@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 public class ConnectionImpl implements GenericConnection {
 
 	private static Connection con;
+	private ConnectionString cons = new ConnectionString();
 
 	/**
 	 * Método que abre a conexão com o banco
@@ -25,13 +26,16 @@ public class ConnectionImpl implements GenericConnection {
 	 */
 	@Override
 	public Connection getConnection() {
+
 		try {
-			Class.forName("net.sourceforge.jtds.jdbc.Driver");
-			con = DriverManager.getConnection(
-					"jdbc:jtds:sqlserver://localhost:1433;"
-							+"DatabaseName=sumula;namedPipe=true",
-							"sa", "senha");
+
+			PropertiesCon pcon = new PropertiesCon();
+			cons = pcon.getProperties();
+
+			Class.forName(cons.getDrive());
+			con = DriverManager.getConnection(cons.getConnection(), cons.getUser(), cons.getPassword());
 			System.out.println("CONECTADO");
+
 		} catch (ClassNotFoundException e) {
 			System.out.println("classe nao encontrada");
 			JOptionPane.showMessageDialog(null, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
@@ -58,7 +62,7 @@ public class ConnectionImpl implements GenericConnection {
 				con.close();
 			con = null;
 		} catch (Exception e) {
-			System.out.println("Erro: "+e.getMessage());
+			System.out.println("Erro: " + e.getMessage());
 		}
 	}
 }

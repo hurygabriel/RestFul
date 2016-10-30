@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+@Deprecated
 public class ConnectionImplMySQL implements GenericConnection{
 
 	public static Connection con;

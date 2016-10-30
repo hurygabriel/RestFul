@@ -51,7 +51,7 @@ public class JogadorDaoImpl implements JogadorDao {
         lista=preencher(rs);
 
 		ps.close();
-
+		
 		return lista;
 	}
 
