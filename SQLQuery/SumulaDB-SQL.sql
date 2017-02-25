@@ -39,8 +39,8 @@ FOREIGN KEY (estadio) REFERENCES estadio(nome),
 FOREIGN KEY (tecnico) REFERENCES tecnico(id)
 )
 
-INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao','sp',1),
-('02/02/2002','são paulo','Morumbi','sp',2)
+INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao','SP',1),
+('02/02/2002','são paulo','Morumbi','SP',2)
 
 CREATE TABLE jogador(
 id int not null identity,
