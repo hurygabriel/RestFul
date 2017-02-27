@@ -24,6 +24,7 @@ public class Jogador {
 	private String naturalidade;
 	private UF uf;
 	private PosicaoJogador posicao;
+	private String caminhoimg;
 	
 	public int getId() {
 		return id;
@@ -79,15 +80,18 @@ public class Jogador {
 	public void setPosicao(PosicaoJogador posicao) {
 		this.posicao = posicao;
 	}
+	public String getCaminhoimg() {
+		return caminhoimg;
+	}
+	public void setCaminhoimg(String caminhoimg) {
+		this.caminhoimg = caminhoimg;
+	}
 	
 	@Override
 	public String toString() {
 		return "Jogador [id=" + id + ", nome=" + nome + ", apelido=" + apelido + ", datanasc=" + datanasc + ", peso="
 				+ peso + ", altura=" + altura + ", naturalidade=" + naturalidade + ", uf=" + uf + ", posicao=" + posicao
-				+ "]";
+				+ ", caminhoimg=" + caminhoimg + "]";
 	}
-	
-
-	
 	
 }

@@ -14,7 +14,9 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
 import controller.ClubeCtrl;
+import controller.JogadorCtrl;
 import model.Clube;
+import model.Jogador;
 
 @Path("/imagem")
 public class ImagensResource {
@@ -27,7 +29,7 @@ public class ImagensResource {
 	@GET
 	@Path("/escudo/{id}")
 	@Produces("image/png")
-	public Response getImage(@PathParam("id") int id) throws SQLException {
+	public Response getEscudo(@PathParam("id") int id) throws SQLException {
 		
 		Clube c = new ClubeCtrl().listaPorId(id);
 		
@@ -44,6 +46,24 @@ public class ImagensResource {
 
 	}
 	
+	@GET
+	@Path("/foto/{id}")
+	@Produces("image/png")
+	public Response getFoto(@PathParam("id") int id) throws SQLException {
+		
+		Jogador j = new JogadorCtrl().pesquisaUnico(id);
+		
+		File file = new File(FILE_PATH + "\\jogador\\" + j.getCaminhoimg());
+		
+		if (!file.exists()) {
+			throw new WebApplicationException(404);
+		}
+		ResponseBuilder response = Response.ok((Object) file);
+		response.header("Content-Disposition", "attachment; filename=\"" + j.getNome() + ".png\"");
+		return response.build();
+	}
+	
+	// EXEMPLO http://localhost:8085/RestFul/imagem/foto/1
 	
 }
 

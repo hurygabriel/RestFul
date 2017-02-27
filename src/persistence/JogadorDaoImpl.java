@@ -35,6 +35,8 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNaturalidade(rs.getString("naturalidade"));
 			j.setUf(UF.valueOf(rs.getString("uf")));
 			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
+			j.setCaminhoimg(rs.getString("caminhoimg"));
+			
 			lista.add(j);
 		}
 		return lista;
@@ -92,6 +94,7 @@ public class JogadorDaoImpl implements JogadorDao {
 			j.setNaturalidade(rs.getString("naturalidade"));
 			j.setUf(UF.valueOf(rs.getString("uf")));
 			j.setPosicao(PosicaoJogador.valueOf(rs.getString("posicao")));
+			j.setCaminhoimg(rs.getString("caminhoimg"));
 
 		}
 		ps.close();

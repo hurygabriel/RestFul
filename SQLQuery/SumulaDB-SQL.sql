@@ -32,7 +32,6 @@ CREATE TABLE clube(
 id int not null identity,
 datafundacao varchar(10) not null,
 nome VARCHAR(50) not null,
---fundador VARCHAR(100),
 estadio varchar(50) not null,
 uf varchar(2),
 tecnico int not null,
@@ -55,82 +54,83 @@ altura float,
 naturalidade VARCHAR(50),
 uf varchar(2),
 posicao varchar(30),
+caminhoimg varchar(60),
 PRIMARY KEY(id)
 )
 
 INSERT INTO jogador VALUES 
-('Ronaldo','Ronaldinho','14/06/1994','70.5','1.80','Brasileiro','SP','ATACANTE'),
-('Joao','Pele','01/01/1950','80.7','1.75','Brasileiro','RJ','ATACANTE'),
-('Hury','Iuri','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO'),
-('Pedro','ZUZI','01/01/1993','75','1.90','Brasileiro','RJ','GOLEIRO'),
+('Ronaldo','Ronaldinho','14/06/1994','70.5','1.80','Brasileiro','SP','ATACANTE','zidade.jpg'),
+('Joao','Pele','01/01/1950','80.7','1.75','Brasileiro','RJ','ATACANTE','zidade.jpg'),
+('Hury','Iuri','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO','zidade.jpg'),
+('Pedro','ZUZI','01/01/1993','75','1.90','Brasileiro','RJ','GOLEIRO','zidade.jpg'),
 
 --TIME A
-('Nome1','Apelido1','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO'),
-('Nome2','Apelido2','02/01/1994','70','1.80','Brasileiro','MA','GOLEIRO'),
+('Nome1','Apelido1','01/01/1994','70','1.80','Brasileiro','SP','GOLEIRO','zidade.jpg'),
+('Nome2','Apelido2','02/01/1994','70','1.80','Brasileiro','MA','GOLEIRO','zidade.jpg'),
 
-('Nome3','Apelido3','03/01/1994','70','1.80','Brasileiro','RJ','ATACANTE'),
-('Nome4','Apelido4','04/01/1994','70','1.80','Brasileiro','MT','ATACANTE'),
+('Nome3','Apelido3','03/01/1994','70','1.80','Brasileiro','RJ','ATACANTE','zidade.jpg'),
+('Nome4','Apelido4','04/01/1994','70','1.80','Brasileiro','MT','ATACANTE','zidade.jpg'),
 
-('Nome5','Apelido5','05/01/1994','70','1.80','Brasileiro','AC','ATACANTE'),
-('Nome6','Apelido6','06/01/1994','70','1.80','Brasileiro','MS','ATACANTE'),
+('Nome5','Apelido5','05/01/1994','70','1.80','Brasileiro','AC','ATACANTE','zidade.jpg'),
+('Nome6','Apelido6','06/01/1994','70','1.80','Brasileiro','MS','ATACANTE','zidade.jpg'),
 
-('Nome7','Apelido7','07/01/1994','70','1.80','Brasileiro','AL','LATERALE'),
-('Nome8','Apelido8','08/01/1994','70','1.80','Brasileiro','MG','LATERALE'),
+('Nome7','Apelido7','07/01/1994','70','1.80','Brasileiro','AL','LATERALE','zidade.jpg'),
+('Nome8','Apelido8','08/01/1994','70','1.80','Brasileiro','MG','LATERALE','zidade.jpg'),
 
-('Nome9','Apelido9','09/01/1994','70','1.80','Brasileiro','AP','LATERALD'),
-('Nome10','Apelido10','10/01/1994','70','1.80','Brasileiro','PA','LATERALD'),
+('Nome9','Apelido9','09/01/1994','70','1.80','Brasileiro','AP','LATERALD','zidade.jpg'),
+('Nome10','Apelido10','10/01/1994','70','1.80','Brasileiro','PA','LATERALD','zidade.jpg'),
 
-('Nome11','Apelido11','11/01/1994','70','1.80','Brasileiro','AM','MEIA'),
-('Nome12','Apelido12','12/01/1994','70','1.80','Brasileiro','PB','MEIA'),
+('Nome11','Apelido11','11/01/1994','70','1.80','Brasileiro','AM','MEIA','zidade.jpg'),
+('Nome12','Apelido12','12/01/1994','70','1.80','Brasileiro','PB','MEIA','zidade.jpg'),
 
-('Nome13','Apelido13','13/01/1994','70','1.80','Brasileiro','BA','MEIA'),
-('Nome14','Apelido14','14/01/1994','70','1.80','Brasileiro','PR','MEIA'),
+('Nome13','Apelido13','13/01/1994','70','1.80','Brasileiro','BA','MEIA','zidade.jpg'),
+('Nome14','Apelido14','14/01/1994','70','1.80','Brasileiro','PR','MEIA','zidade.jpg'),
 
-('Nome15','Apelido15','15/01/1994','70','1.80','Brasileiro','CE','ZAGUEIRO'),
-('Nome16','Apelido16','16/01/1994','70','1.80','Brasileiro','PE','ZAGUEIRO'),
+('Nome15','Apelido15','15/01/1994','70','1.80','Brasileiro','CE','ZAGUEIRO','zidade.jpg'),
+('Nome16','Apelido16','16/01/1994','70','1.80','Brasileiro','PE','ZAGUEIRO','zidade.jpg'),
 
-('Nome17','Apelido17','17/01/1994','70','1.80','Brasileiro','DF','ZAGUEIRO'),
-('Nome18','Apelido18','18/01/1994','70','1.80','Brasileiro','PI','ZAGUEIRO'),
+('Nome17','Apelido17','17/01/1994','70','1.80','Brasileiro','DF','ZAGUEIRO','zidade.jpg'),
+('Nome18','Apelido18','18/01/1994','70','1.80','Brasileiro','PI','ZAGUEIRO','zidade.jpg'),
 
-('Nome19','Apelido19','19/01/1994','70','1.80','Brasileiro','ES','VOLANTE'),
-('Nome20','Apelido20','20/01/1994','70','1.80','Brasileiro','RN','VOLANTE'),
+('Nome19','Apelido19','19/01/1994','70','1.80','Brasileiro','ES','VOLANTE','zidade.jpg'),
+('Nome20','Apelido20','20/01/1994','70','1.80','Brasileiro','RN','VOLANTE','zidade.jpg'),
 
-('Nome21','Apelido21','21/01/1994','70','1.80','Brasileiro','GO','VOLANTE'),
-('Nome22','Apelido22','22/01/1994','70','1.80','Brasileiro','RS','VOLANTE'),
+('Nome21','Apelido21','21/01/1994','70','1.80','Brasileiro','GO','VOLANTE','zidade.jpg'),
+('Nome22','Apelido22','22/01/1994','70','1.80','Brasileiro','RS','VOLANTE','zidade.jpg'),
 
 -------- TIME B
-('Nome23','Apelido23','01/02/1994','70','1.80','Brasileiro','SP','GOLEIRO'),
-('Nome24','Apelido24','02/02/1994','70','1.80','Brasileiro','MA','GOLEIRO'),
+('Nome23','Apelido23','01/02/1994','70','1.80','Brasileiro','SP','GOLEIRO','zidade.jpg'),
+('Nome24','Apelido24','02/02/1994','70','1.80','Brasileiro','MA','GOLEIRO','zidade.jpg'),
 
-('Nome25','Apelido25','03/02/1994','70','1.80','Brasileiro','RJ','ATACANTE'),
-('Nome26','Apelido26','04/02/1994','70','1.80','Brasileiro','MT','ATACANTE'),
+('Nome25','Apelido25','03/02/1994','70','1.80','Brasileiro','RJ','ATACANTE','zidade.jpg'),
+('Nome26','Apelido26','04/02/1994','70','1.80','Brasileiro','MT','ATACANTE','zidade.jpg'),
 
-('Nome27','Apelido27','05/02/1994','70','1.80','Brasileiro','AC','ATACANTE'),
-('Nome28','Apelido28','06/02/1994','70','1.80','Brasileiro','MS','ATACANTE'),
+('Nome27','Apelido27','05/02/1994','70','1.80','Brasileiro','AC','ATACANTE','zidade.jpg'),
+('Nome28','Apelido28','06/02/1994','70','1.80','Brasileiro','MS','ATACANTE','zidade.jpg'),
 
-('Nome29','Apelido29','07/02/1994','70','1.80','Brasileiro','AL','LATERALE'),
-('Nome30','Apelido30','08/02/1994','70','1.80','Brasileiro','MG','LATERALE'),
+('Nome29','Apelido29','07/02/1994','70','1.80','Brasileiro','AL','LATERALE','zidade.jpg'),
+('Nome30','Apelido30','08/02/1994','70','1.80','Brasileiro','MG','LATERALE','zidade.jpg'),
 
-('Nome31','Apelido31','09/02/1994','70','1.80','Brasileiro','AP','LATERALD'),
-('Nome32','Apelido32','10/02/1994','70','1.80','Brasileiro','PA','LATERALD'),
+('Nome31','Apelido31','09/02/1994','70','1.80','Brasileiro','AP','LATERALD','zidade.jpg'),
+('Nome32','Apelido32','10/02/1994','70','1.80','Brasileiro','PA','LATERALD','zidade.jpg'),
 
-('Nome33','Apelido33','11/02/1994','70','1.80','Brasileiro','AM','MEIA'),
-('Nome34','Apelido34','12/02/1994','70','1.80','Brasileiro','PB','MEIA'),
+('Nome33','Apelido33','11/02/1994','70','1.80','Brasileiro','AM','MEIA','zidade.jpg'),
+('Nome34','Apelido34','12/02/1994','70','1.80','Brasileiro','PB','MEIA','zidade.jpg'),
 
-('Nome35','Apelido35','13/02/1994','70','1.80','Brasileiro','BA','MEIA'),
-('Nome36','Apelido36','14/02/1994','70','1.80','Brasileiro','PR','MEIA'),
+('Nome35','Apelido35','13/02/1994','70','1.80','Brasileiro','BA','MEIA','zidade.jpg'),
+('Nome36','Apelido36','14/02/1994','70','1.80','Brasileiro','PR','MEIA','zidade.jpg'),
 
-('Nome37','Apelido37','15/02/1994','70','1.80','Brasileiro','CE','ZAGUEIRO'),
-('Nome38','Apelido38','16/02/1994','70','1.80','Brasileiro','PE','ZAGUEIRO'),
+('Nome37','Apelido37','15/02/1994','70','1.80','Brasileiro','CE','ZAGUEIRO','zidade.jpg'),
+('Nome38','Apelido38','16/02/1994','70','1.80','Brasileiro','PE','ZAGUEIRO','zidade.jpg'),
 
-('Nome39','Apelido39','17/02/1994','70','1.80','Brasileiro','DF','ZAGUEIRO'),
-('Nome40','Apelido40','18/02/1994','70','1.80','Brasileiro','PI','ZAGUEIRO'),
+('Nome39','Apelido39','17/02/1994','70','1.80','Brasileiro','DF','ZAGUEIRO','zidade.jpg'),
+('Nome40','Apelido40','18/02/1994','70','1.80','Brasileiro','PI','ZAGUEIRO','zidade.jpg'),
 
-('Nome41','Apelido41','19/02/1994','70','1.80','Brasileiro','ES','VOLANTE'),
-('Nome42','Apelido42','20/02/1994','70','1.80','Brasileiro','RN','VOLANTE'),
+('Nome41','Apelido41','19/02/1994','70','1.80','Brasileiro','ES','VOLANTE','zidade.jpg'),
+('Nome42','Apelido42','20/02/1994','70','1.80','Brasileiro','RN','VOLANTE','zidade.jpg'),
 
-('Nome43','Apelido43','21/02/1994','70','1.80','Brasileiro','GO','VOLANTE'),
-('Nome44','Apelido44','22/02/1994','70','1.80','Brasileiro','RS','VOLANTE')
+('Nome43','Apelido43','21/02/1994','70','1.80','Brasileiro','GO','VOLANTE','zidade.jpg'),
+('Nome44','Apelido44','22/02/1994','70','1.80','Brasileiro','RS','VOLANTE','zidade.jpg')
 
 CREATE TABLE situacao(
 nome VARCHAR(30),
