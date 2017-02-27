@@ -42,9 +42,9 @@ FOREIGN KEY (estadio) REFERENCES estadio(nome),
 FOREIGN KEY (tecnico) REFERENCES tecnico(id)
 )
 
-INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao','SP',1,'c:\\imagens\escudos\corinthians_bra.png'),
-('02/02/2002','são paulo','Morumbi','SP',2,'c:\\imagens\escudos\saopaulo_bra.png')
-
+INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao','SP',1,'corinthians_bra.png'),
+('02/02/2002','são paulo','Morumbi','SP',2,'saopaulo_bra.png')
+--
 CREATE TABLE jogador(
 id int not null identity,
 nome varchar(50),
@@ -325,6 +325,7 @@ e juizao nao deu penalty ', 5, 5)
 --Lembre-se de executar as views no final
 ------------ATÉ AQUI OK -------------------------------------
 
+select * from clube
 
 Select arb.id, arb.nome, arb.dataNascimento, arb.uf, arb.situacao,
 sent.valorPena, sent.pontos, sent.dataSentenca, sent.motivo, sent.descricao,
