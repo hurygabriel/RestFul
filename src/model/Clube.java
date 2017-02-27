@@ -20,6 +20,7 @@ public class Clube {
 	private Estadio estadio;
 	private UF uf;
 	private Tecnico tecnico;
+	private String caminhoimg;
 
 	public int getId() {
 		return id;
@@ -69,12 +70,19 @@ public class Clube {
 		this.tecnico = tecnico;
 	}
 
+	public String getCaminhoimg() {
+		return caminhoimg;
+	}
+
+	public void setCaminhoimg(String caminhoimg) {
+		this.caminhoimg = caminhoimg;
+	}
+
 	@Override
 	public String toString() {
 		return "Clube [id=" + id + ", dataFundacao=" + dataFundacao + ", nome=" + nome + ", estadio=" + estadio
-				+ ", uf=" + uf + ", tecnico=" + tecnico + "]";
+				+ ", uf=" + uf + ", tecnico=" + tecnico + ", caminhoimg=" + caminhoimg + "]";
 	}
-
 
 
 

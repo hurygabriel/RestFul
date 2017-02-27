@@ -1,7 +1,9 @@
 USE MASTER
 GO
 DROP DATABASE sumula
+
 ----------Query Estrutura das Tabelas--------------
+
 CREATE DATABASE sumula
 GO
 USE sumula
@@ -34,13 +36,14 @@ nome VARCHAR(50) not null,
 estadio varchar(50) not null,
 uf varchar(2),
 tecnico int not null,
+caminhoimg varchar(60),
 PRIMARY KEY (id),
 FOREIGN KEY (estadio) REFERENCES estadio(nome),
 FOREIGN KEY (tecnico) REFERENCES tecnico(id)
 )
 
-INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao','SP',1),
-('02/02/2002','são paulo','Morumbi','SP',2)
+INSERT INTO clube VALUES ('01/01/2001','corinthias','Itaquerao','SP',1,'c:\\imagens\escudos\corinthians_bra.png'),
+('02/02/2002','são paulo','Morumbi','SP',2,'c:\\imagens\escudos\saopaulo_bra.png')
 
 CREATE TABLE jogador(
 id int not null identity,
@@ -317,7 +320,12 @@ INSERT INTO sentenca VALUES(1, 1, 800.57, null, '2016/10/12',
 'Caiu na vila, penalty pro santos', 'Jogador do santos caiu na vila 
 e juizao nao deu penalty ', 5, 5)
 
-------------até aqui ok
+
+------------------------------------------------------------
+--Lembre-se de executar as views no final
+------------ATÉ AQUI OK -------------------------------------
+
+
 Select arb.id, arb.nome, arb.dataNascimento, arb.uf, arb.situacao,
 sent.valorPena, sent.pontos, sent.dataSentenca, sent.motivo, sent.descricao,
 sent.jogosPena, sent.jogosPagos from arbitro arb

@@ -50,6 +50,7 @@ public class ClubeDaoImpl implements ClubeDao {
 			cb.setDataFundacao(rs.getString("dataFundacao"));
 			cb.setUf(UF.valueOf(rs.getString("uf")));
 			cb.setTecnico(tdao.pesquisaUnicoId(rs.getInt("tecnico")));
+			cb.setCaminhoimg(rs.getString("caminhoimg"));
 			
 			lista.add(cb);
 		}
@@ -86,6 +87,7 @@ public class ClubeDaoImpl implements ClubeDao {
 			cb.setDataFundacao(rs.getString("dataFundacao"));
 			cb.setUf(UF.valueOf(rs.getString("uf")));
 			cb.setTecnico(tdao.pesquisaUnicoId(rs.getInt("tecnico")));
+			cb.setCaminhoimg(rs.getString("caminhoimg"));
 		}
 
 		ps.close();
@@ -110,7 +112,8 @@ public class ClubeDaoImpl implements ClubeDao {
 			cb.setDataFundacao(rs.getString("dataFundacao"));
 			cb.setUf(UF.valueOf(rs.getString("uf")));
 			cb.setTecnico(tdao.pesquisaUnicoId(rs.getInt("tecnico")));
-
+			cb.setCaminhoimg(rs.getString("caminhoimg"));
+			
 			lista.add(cb);
 		}
 
