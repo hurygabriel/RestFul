@@ -65,7 +65,13 @@ public class ContratoDaoImpl implements ContratoDao {
 
 	@Override
 	public void exclui(Contrato obj) throws SQLException {
-		// TODO Auto-generated method stub
+		String query = "DELETE contrato WHERE numero = ?";
+		PreparedStatement ps = c.prepareStatement(query);
+
+		ps.setInt(1, obj.getNumero());
+
+		ps.execute();
+		ps.close();
 
 	}
 

@@ -60,7 +60,13 @@ public class TecnicoDaoImpl implements TecnicoDao {
 
 	@Override
 	public void exclui(Tecnico obj) throws SQLException {
-		// TODO Auto-generated method stub
+		String query = "DELETE tecnico WHERE id = ?";
+		PreparedStatement ps = c.prepareStatement(query);
+
+		ps.setInt(1, obj.getId());
+
+		ps.execute();
+		ps.close();
 
 	}
 

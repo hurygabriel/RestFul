@@ -14,6 +14,7 @@ import model.Clube;
 
 /**
  * Persistencia do clube
+ * 
  * @author hury
  *
  */
@@ -27,12 +28,10 @@ public class ClubeDaoImpl implements ClubeDao {
 		c = gc.getConnection();
 	}
 
-	
 	@Override
 	public void inclui(Clube obj) throws SQLException {
 		String query = "INSERT INTO clube VALUES (?,?,?,?,?,?)";
 		PreparedStatement ps = c.prepareStatement(query);
-
 
 		ps.setString(1, obj.getDataFundacao());
 		ps.setString(2, obj.getNome());
@@ -52,7 +51,7 @@ public class ClubeDaoImpl implements ClubeDao {
 
 		PreparedStatement ps = c.prepareStatement(query);
 		ResultSet rs = ps.executeQuery();
-		
+
 		while (rs.next()) {
 			Clube cb = new Clube();
 			// pesquisa o estadio, traz todos seus atributos
@@ -63,7 +62,7 @@ public class ClubeDaoImpl implements ClubeDao {
 			cb.setUf(UF.valueOf(rs.getString("uf")));
 			cb.setTecnico(tdao.pesquisaUnicoId(rs.getInt("tecnico")));
 			cb.setCaminhoimg(rs.getString("caminhoimg"));
-			
+
 			lista.add(cb);
 		}
 
@@ -73,11 +72,10 @@ public class ClubeDaoImpl implements ClubeDao {
 
 	@Override
 	public void altera(Clube obj) throws SQLException {
-	
+
 		String query = "UPDATE clube SET datafundacao = ?, nome = ?, estadio = ?,"
 				+ " uf = ?, tecnico = ?, caminhoimg = ? WHERE id = ?";
 		PreparedStatement ps = c.prepareStatement(query);
-
 
 		ps.setString(1, obj.getDataFundacao());
 		ps.setString(2, obj.getNome());
@@ -86,7 +84,7 @@ public class ClubeDaoImpl implements ClubeDao {
 		ps.setInt(5, obj.getTecnico().getId());
 		ps.setString(6, obj.getCaminhoimg());
 		ps.setInt(7, obj.getId());
-		
+
 		ps.execute();
 		ps.close();
 	}
@@ -144,7 +142,7 @@ public class ClubeDaoImpl implements ClubeDao {
 			cb.setUf(UF.valueOf(rs.getString("uf")));
 			cb.setTecnico(tdao.pesquisaUnicoId(rs.getInt("tecnico")));
 			cb.setCaminhoimg(rs.getString("caminhoimg"));
-			
+
 			lista.add(cb);
 		}
 

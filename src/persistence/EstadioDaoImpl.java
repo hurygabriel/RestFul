@@ -85,7 +85,13 @@ public class EstadioDaoImpl implements EstadioDao {
 
 	@Override
 	public void exclui(Estadio obj) throws SQLException {
-		// TODO Auto-generated method stub
+		String query = "DELETE estadio WHERE nome = ?";
+		PreparedStatement ps = c.prepareStatement(query);
+
+		ps.setString(1, obj.getNome());
+
+		ps.execute();
+		ps.close();
 		
 	}
 

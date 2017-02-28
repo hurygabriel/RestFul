@@ -65,7 +65,7 @@ public class EscalacaoDaoImpl implements EscalacaoDao {
 
 	@Override
 	public void exclui(Escalacao obj) throws SQLException {
-		// TODO Auto-generated method stub
+		
 
 	}
 
