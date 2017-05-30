@@ -5,6 +5,7 @@ DROP DATABASE sumula
 ----------Query Estrutura das Tabelas--------------
 
 CREATE DATABASE sumula
+COLLATE Latin1_General_100_CS_AS_SC;  
 GO
 USE sumula
 
@@ -445,3 +446,5 @@ group by cont.numero, cont.tipo, cont.datainicio, cont.datafim,
 --------------------------
 drop view v_livrocategoria
 SELECT * from v_livrocategoria
+
+select * from clube
