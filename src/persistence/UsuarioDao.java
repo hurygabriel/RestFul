@@ -7,7 +7,7 @@ import model.Usuario;
 
 public interface UsuarioDao {
 	
-	Usuario login(Usuario usuario) throws SQLException, UsuarioException;
+	Usuario login(String usuario, String senha) throws SQLException, UsuarioException;
 	void logoff(Usuario usuario) throws SQLException;
-	
+	void insereChave(Usuario usuario) throws SQLException;
 }

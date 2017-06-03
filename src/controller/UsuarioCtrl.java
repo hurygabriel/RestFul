@@ -11,8 +11,8 @@ public class UsuarioCtrl {
 	
 	UsuarioDao dao = new UsuarioDaoImpl();
 	
-	public Usuario login(Usuario usuario) throws SQLException, UsuarioException{
-		return dao.login(usuario);
+	public Usuario login(String usuario, String senha) throws SQLException, UsuarioException{
+		return dao.login(usuario, senha);
 	}
 	
 	public void logoff(Usuario usuario) throws SQLException{

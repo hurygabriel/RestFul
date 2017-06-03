@@ -15,8 +15,8 @@ public class UsuarioResource {
 	@GET
 	@Path("/login")
 	@Produces("application/json")
-	public Usuario login(@PathParam("usuario")Usuario usuario) throws SQLException, UsuarioException{
-		return new UsuarioCtrl().login(usuario);
+	public Usuario login(@PathParam("usuario")String usuario, @PathParam("senha") String senha) throws SQLException, UsuarioException{
+		return new UsuarioCtrl().login(usuario, senha);
 	}
 
 }
