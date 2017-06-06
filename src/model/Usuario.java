@@ -1,14 +1,12 @@
 package model;
 
-import java.util.Date;
-
 public class Usuario {
 	
 	private long id;
 	private String usuario;
 	private String senha;
 	private String chave;
-	private Date dataCriacao;
+	private String dataCriacao;
 	
 	public long getId() {
 		return id;
@@ -34,13 +32,11 @@ public class Usuario {
 	public void setChave(String chave) {
 		this.chave = chave;
 	}
-	public Date getDataCriacao() {
+	public String getDataCriacao() {
 		return dataCriacao;
 	}
-	public void setDataCriacao(Date dataCriacao) {
+	public void setDataCriacao(String dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
-	
-	
 
 }

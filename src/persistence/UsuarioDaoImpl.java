@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import connection.ConnectionImpl;
 import connection.GenericConnection;
 import exception.UsuarioException;
@@ -32,7 +35,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		if(rs.next()){
 			u.setId(rs.getLong("id"));
 			u.setUsuario(rs.getString("usuario"));
-			u.setDataCriacao(rs.getDate("datacriacao"));
+			u.setDataCriacao(rs.getString("datacriacao"));
 			u.setChave(chave.gerarChave());
 			
 			insereChave(u);
@@ -62,6 +65,30 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		ps.setLong(2, usuario.getId());
 		ps.execute();
 		ps.close();
+	}
+
+	@Override
+	public boolean criaUsuario(String usuario, String senha) throws SQLException {
+		try {
+			String query = "INSERT INTO usuario(usuario, senha, datacriacao) VALUES (?,?,?)";
+			PreparedStatement ps = c.prepareStatement(query);
+			ps.setString(1, usuario);
+			ps.setString(2, senha);
+			
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
+			Date date = new Date(); 
+			String dataAtual = dateFormat.format(date);
+			
+			ps.setString(3, dataAtual);
+			
+			ps.execute();
+			ps.close();
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+
 	}
 
 }
