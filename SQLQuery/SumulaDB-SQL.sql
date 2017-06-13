@@ -293,13 +293,14 @@ nome VARCHAR(50) NOT NULL,
 dataNascimento DATE NOT NULL,
 uf VARCHAR(2),
 situacao VARCHAR(20),
+caminhoimg VARCHAR(60),
 PRIMARY KEY(id)
 )
 
 INSERT INTO arbitro (nome, dataNascimento, uf, situacao) VALUES
-('teste', '1950/01/01', 'SP', 'DISPONIVEL'),
-('teste2', '1952/02/02', 'RJ', 'DISPONIVEL'),
-('teste3', '1953/03/03', 'SP', 'SUSPENSO')
+('teste', '1950/01/01', 'SP', 'DISPONIVEL','ab3.jpg'),
+('teste2', '1952/02/02', 'RJ', 'DISPONIVEL','ab1.jpg'),
+('teste3', '1953/03/03', 'SP', 'SUSPENSO','ab2.jpg')
 
 CREATE TABLE sentenca(
 
