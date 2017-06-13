@@ -7,6 +7,7 @@ import java.util.List;
 import enumeration.SituacaoJuiz;
 import enumeration.UF;
 import model.Arbitro;
+import model.Clube;
 import persistence.ArbitroDao;
 import persistence.ArbitroDaoImpl;
 
@@ -29,4 +30,9 @@ public class ArbitroCtrl {
 	public List<Arbitro> listaPorSituacao(SituacaoJuiz situacao)throws SQLException, ParseException{
 		return aDao.pesquisaPorSituacao(situacao);
 	}
+	
+	public Arbitro listaPorId(int id) throws SQLException{
+		return aDao.pesquisaUnico(id);
+	}
+	
 }

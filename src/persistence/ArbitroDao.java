@@ -14,5 +14,6 @@ public interface ArbitroDao {
 	public List<Arbitro> pesquisaPorSituacao(SituacaoJuiz situacao) throws SQLException;
 	public List<Arbitro> pesquisaPorNome(String nome) throws SQLException;
 	public List<Arbitro> listaTodos() throws SQLException, ParseException;
+	public Arbitro pesquisaUnico(int id) throws SQLException;
 	
 }

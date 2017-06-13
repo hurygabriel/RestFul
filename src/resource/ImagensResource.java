@@ -13,8 +13,10 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
+import controller.ArbitroCtrl;
 import controller.ClubeCtrl;
 import controller.JogadorCtrl;
+import model.Arbitro;
 import model.Clube;
 import model.Jogador;
 
@@ -49,7 +51,7 @@ public class ImagensResource {
 	@GET
 	@Path("/foto/{id}")
 	@Produces("image/png")
-	public Response getFoto(@PathParam("id") int id) throws SQLException {
+	public Response getFotoJogador(@PathParam("id") int id) throws SQLException {
 		
 		Jogador j = new JogadorCtrl().pesquisaUnico(id);
 		
@@ -63,7 +65,26 @@ public class ImagensResource {
 		return response.build();
 	}
 	
-	// EXEMPLO http://localhost:8085/RestFul/imagem/foto/1
+	// EXEMPLO http://localhost:8085/RestFul/imagem/fotojogador/1
+	
+	@GET
+	@Path("/fotoarbitro/{id}")
+	@Produces("image/png")
+	public Response getFotoArbitro(@PathParam("id") int id) throws SQLException {
+		
+		Arbitro a = new ArbitroCtrl().listaPorId(id);
+		
+		File file = new File(FILE_PATH + "\\arbitro\\" + a.getCaminhoimg());
+		
+		if (!file.exists()) {
+			throw new WebApplicationException(404);
+		}
+		ResponseBuilder response = Response.ok((Object) file);
+		response.header("Content-Disposition", "attachment; filename=\"" + a.getNome() + ".png\"");
+		return response.build();
+	}
+	
+	// EXEMPLO http://localhost:8085/RestFul/imagem/fotoarbitro/1
 	
 }
 

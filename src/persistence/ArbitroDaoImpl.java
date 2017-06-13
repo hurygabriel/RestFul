@@ -169,4 +169,10 @@ public class ArbitroDaoImpl implements ArbitroDao {
 		
 		return lista;
 	}
+
+	@Override
+	public Arbitro pesquisaUnico(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

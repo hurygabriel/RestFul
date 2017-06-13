@@ -9,7 +9,8 @@ import enumeration.UF;
 
 /**
  * Atributos de um arbitro de uma partida de futebol
- * @author Thiago
+ * 
+ * @author Thiago, Hury
  *
  */
 
@@ -24,68 +25,89 @@ public class Arbitro {
 	private SituacaoJuiz situacao;
 	private String situaçãoDescritivo;
 	private ArrayList<Sentenca> listaSentenca;
-	
-	public Arbitro(ArrayList<Sentenca> listaSentenca){
+	private String caminhoimg;
+
+	public Arbitro(ArrayList<Sentenca> listaSentenca) {
 		this.listaSentenca = listaSentenca;
 	}
-	
-	
+
 	public Arbitro() {
 		super();
 	}
 
-
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
+
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
+
 	public UF getUf() {
 		return uf;
 	}
+
 	public void setUf(UF uf) {
 		this.uf = uf;
 	}
+
 	public SituacaoJuiz getSituacao() {
 		return situacao;
 	}
+
 	public void setSituacao(SituacaoJuiz situacao) {
 		this.situacao = situacao;
 	}
+
 	public String getUfDescricao() {
 		return ufDescricao;
 	}
+
 	public void setUfDescricao(String ufDescricao) {
 		this.ufDescricao = ufDescricao;
 	}
+
 	public String getSituaçãoDescritivo() {
 		return situaçãoDescritivo;
 	}
+
 	public void setSituaçãoDescritivo(String situaçãoDescritivo) {
 		this.situaçãoDescritivo = situaçãoDescritivo;
 	}
+
 	public ArrayList<Sentenca> getListaSentenca() {
-		if(listaSentenca == null){
+		if (listaSentenca == null) {
 			listaSentenca = new ArrayList<Sentenca>();
 		}
 		return listaSentenca;
 	}
+
 	public void setListaSentenca(ArrayList<Sentenca> listaSentenca) {
 		this.listaSentenca = listaSentenca;
 	}
-	
-	
+
+	public String getCaminhoimg() {
+		return caminhoimg;
+	}
+
+	public void setCaminhoimg(String caminhoimg) {
+		this.caminhoimg = caminhoimg;
+	}
+
 }
