@@ -13,7 +13,7 @@ import model.Usuario;
 public class UsuarioResource {
 	
 	@GET
-	@Path("/login")
+	@Path("/login/{usuario}/{senha}")
 	@Produces("application/json")
 	public Usuario login(@PathParam("usuario")String usuario, @PathParam("senha") String senha) throws SQLException, UsuarioException{
 		return new UsuarioCtrl().login(usuario, senha);

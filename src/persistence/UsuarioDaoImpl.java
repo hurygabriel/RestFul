@@ -24,6 +24,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Override
 	public Usuario login(String usuario, String senha) throws SQLException, UsuarioException {
+		System.out.println(usuario +  senha);
 		Chave chave = new Chave();
 		Usuario u = new Usuario();
 		String query = "SELECT id, usuario, senha, datacriacao FROM usuario WHERE usuario = ? and senha = ?";
