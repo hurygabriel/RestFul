@@ -20,9 +20,12 @@ public class CadastroDaoImpl implements CadastroDao {
 	}
 
 	@Override
-	public Usuario insereCadastro(Cadastro cadastro) throws SQLException, UsuarioException {
+	public boolean insereCadastro(Cadastro cadastro) throws SQLException, UsuarioException {
 		UsuarioDao uDao = new UsuarioDaoImpl();
 		Usuario usuario = new Usuario();
+		
+		uDao.criaUsuario(cadastro.getUsuario().getUsuario(), cadastro.getUsuario().getSenha());
+		
 		usuario = uDao.login(cadastro.getUsuario().getUsuario(), cadastro.getUsuario().getSenha());
 		cadastro.setUsuario(usuario);
 		String query = "INSERT INTO cadastro(nome, idUsuario, cpf, tipo, registro) VALUES (?,?,?,?,?)";
@@ -36,7 +39,7 @@ public class CadastroDaoImpl implements CadastroDao {
 
 		ps.execute();
 		ps.close();
-		return usuario;
+		return true;
 
 	}
 

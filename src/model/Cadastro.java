@@ -1,7 +1,10 @@
 package model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import enumeration.Tipo;
 
+@XmlRootElement
 public class Cadastro {
 	
 	private String nome;
