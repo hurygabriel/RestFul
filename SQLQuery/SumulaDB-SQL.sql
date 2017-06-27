@@ -297,7 +297,7 @@ caminhoimg VARCHAR(60),
 PRIMARY KEY(id)
 )
 
-INSERT INTO arbitro (nome, dataNascimento, uf, situacao) VALUES
+INSERT INTO arbitro (nome, dataNascimento, uf, situacao, caminhoimg) VALUES
 ('teste', '1950/01/01', 'SP', 'DISPONIVEL','ab3.jpg'),
 ('teste2', '1952/02/02', 'RJ', 'DISPONIVEL','ab1.jpg'),
 ('teste3', '1953/03/03', 'SP', 'SUSPENSO','ab2.jpg')
@@ -422,6 +422,7 @@ group by cb.nome, cb.id, jog.nome, jog.apelido, jog.altura, jog.peso, jog.natura
 -------------------------
 drop view v_jogadorClube
 select * from v_jogadorClube where idclube = 1
+
 -------------------------
 Pesquisa Contrato e traz clube e jogador
 --------------------------

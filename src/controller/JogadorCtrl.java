@@ -84,4 +84,13 @@ public class JogadorCtrl {
 		return jdao.pesquisaUnico(id);
 	}
 	
+	/**
+	 * Inclui um jogador
+	 * @param jog
+	 * @throws SQLException
+	 */
+	public void inclui(Jogador jog) throws SQLException{
+		jdao.inclui(jog);
+	}
+	
 }

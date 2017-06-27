@@ -69,7 +69,7 @@ public class ImagensResource {
 	
 	@GET
 	@Path("/fotoarbitro/{id}")
-	@Produces("image/png")
+	@Produces("image/png") 
 	public Response getFotoArbitro(@PathParam("id") int id) throws SQLException {
 		
 		Arbitro a = new ArbitroCtrl().listaPorId(id);
