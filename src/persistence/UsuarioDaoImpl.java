@@ -70,8 +70,9 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Override
 	public boolean criaUsuario(String usuario, String senha) throws SQLException {
+		System.out.println("Usuario : " + usuario);
 		try {
-			String query = "INSERT INTO usuario(usuario, senha, datacriacao) VALUES (?,?,?)";
+			String query = "INSERT INTO usuario(usuario, senha, datacriacao, chave, validadeChave) VALUES (?,?,?,?,?)";
 			PreparedStatement ps = c.prepareStatement(query);
 			ps.setString(1, usuario);
 			ps.setString(2, senha);
@@ -81,6 +82,8 @@ public class UsuarioDaoImpl implements UsuarioDao {
 			String dataAtual = dateFormat.format(date);
 			
 			ps.setString(3, dataAtual);
+			ps.setString(4, "");
+			ps.setString(5, dataAtual);
 			
 			ps.execute();
 			ps.close();
