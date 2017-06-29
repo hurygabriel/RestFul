@@ -405,6 +405,26 @@ nomeEstadio varchar(50),
 
 )
 
+create table usuario(
+id int not null identity,
+usuario varchar(100) not null,
+senha varchar(100) not null,
+chave varchar(100) not null,
+dataCriacao datetime not null,
+validadeChave datetime not null
+primary key(id)
+)
+
+CREATE TABLE cadastro (
+id int identity not null primary key,
+idUsuario int not null,
+nome varchar(100) not null,
+cpf varchar(11) not null,
+tipo varchar(50) not null,
+registro varchar(50)
+FOREIGN KEY (idUsuario) REFERENCES usuario(id)
+)
+
 -------------------------
 Pesquisa todos os jogadores de um clube
 -------------------------
