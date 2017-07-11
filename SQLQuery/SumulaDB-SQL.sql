@@ -303,9 +303,12 @@ INSERT INTO arbitro (nome, dataNascimento, uf, situacao, caminhoimg) VALUES
 ('teste3', '1953/03/03', 'SP', 'SUSPENSO','ab2.jpg')
 
 CREATE TABLE sentenca(
-
 id INT NOT NULL,
 idArbitro INT NOT NULL,
+idPartida int not null,
+idJogador int not null,
+idClube int not null,
+idCartao int not null,
 valorPena DECIMAL(10,2),
 pontos INT,
 dataSentenca DATE NOT NULL,
@@ -314,7 +317,12 @@ descricao VARCHAR(250),
 jogosPena INT NOT NULL,
 jogosPagos INT NOT NULL,
 PRIMARY KEY(id),
-FOREIGN KEY(idArbitro) REFERENCES arbitro(id))
+FOREIGN KEY(idArbitro) REFERENCES arbitro(id),
+foreign key(idPartida) references partida(id),
+foreign key(idJogador) references jogador(id),
+foreign key(idClube) references Clube(id),
+foreign key(idCartao) references Cartao(id)
+)
 
 INSERT INTO sentenca VALUES(1, 1, 800.57, null, '2016/10/12', 
 'Empurrou um jogador', 'Empurrou o jogador neymar durante uma partida', 5, 2),
@@ -395,13 +403,26 @@ CREATE TABLE substituicao(
 )
 
 CREATE TABLE cartao(
+id int primary key identity,
+idJogador int not null,
+idArbitro int not null,
+tipo varchar(50),
+qtd int,
+tempo int,
+foreign key (idJogador) references jogador(id),
+foreign key (idArbitro) references arbitro(id)
 )
 
 CREATE TABLE partida(
+id int primary key identity,
 idEscalacao int not null,
 idClube int not null,
 idCampeonato int,
-nomeEstadio varchar(50),
+idEstadio varchar(50),
+foreign key (idEscalacao) references escalacao(id),
+foreign key (idClube) references clube(id),
+foreign key (idCampeonato) references campeonato(id),
+foreign key (idEstadio) references estadio(id),
 
 )
 
