@@ -373,33 +373,73 @@ FOREIGN KEY (idtitulo) REFERENCES titulo(id),
 )
 
 CREATE TABLE campeonato(
-idCampeonato int not null,
+id int not null,
+idPartida int not null,
 nome VARCHAR(50),
 ano date,
-PRIMARY KEY(idCampeonato)
+PRIMARY KEY(id),
+foreign key (idPartida) references Partida(id)
 )
 
 CREATE TABLE participacao(
+idCampeonato int not null,
+idClube int not null,
+posicao varchar(50),
+pontos int,
+golsMarcaods int,
+golsSofridos int,
+saldoGols int,
+jogos int,
+vitorias int,
+derrotas int,
+empates int,
+aproveitamento decimal(10,2),
+foreign key (idCampeonato) references Campeonato(id),
+foreign key (idClube) references clube(id)
 )
 
 CREATE TABLE inscricao(
+idcampeonato int not null,
+idjogador int not null,
 numero int not null,
 BID int not null,
 datapublicacao date
+foreign key (idCampeonato) references Campeonato(id),
+foreign key (idJogador) references Joagdor(id)
 )
 
 CREATE TABLE sumula(
-idSumula int not null,
+id int not null,
 idGol int not null,
-idSubstituicao int not null
+idSubstituicao int not null,
+primeiroTempoInicio datetime,
+primeiroTempoTermino datetime,
+tempoIntervalo Datetime,
+segundoTempoInicio datetime,
+segundoTempoTermino datetime,
+primeiroTempoAcrescimos datetime,
+segundoTempoAcrescimos datetime,
+descricao varchar(200),
+observacoes varchar(200),
+foreign key (idGol) references Gol(id),
+foreign key (idSubstituicao) references substituicao(id)
 )
 
 CREATE TABLE gol(
-idSumula int
-idJogador int not null
+id int primary key identity,
+idJogador int not null,
+qtd int,
+tempo int,
+foreign key (idJogador) references Jogador(id)
 )
 
 CREATE TABLE substituicao(
+id int primary key identity,
+tempo int, 
+idJogadorEntrada int,
+idJogadorSaida int,
+foreign key (idJogadorEntrada) references Jogador(id),
+foreign key (idJogadorSaida) references Jogador(id)
 )
 
 CREATE TABLE cartao(
@@ -417,13 +457,12 @@ CREATE TABLE partida(
 id int primary key identity,
 idEscalacao int not null,
 idClube int not null,
-idCampeonato int,
 idEstadio varchar(50),
+data datetime not null,
+hora datetime not null,
 foreign key (idEscalacao) references escalacao(id),
 foreign key (idClube) references clube(id),
-foreign key (idCampeonato) references campeonato(id),
 foreign key (idEstadio) references estadio(id),
-
 )
 
 create table usuario(
